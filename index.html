@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کلینیک امگا</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      direction: rtl;
+      background-color: #fdfdfd;
+    }
+    
+    html, body {
+  overflow-x: hidden;
+}
+    /* نوار بالا */
+    .top-bar {
+      background-color: #bfa046;
+      color: white;
+      padding: 8px 4px;
+      display: flex;
+      justify-content: center;
+      gap: 120px;
+      align-items: center;
+      font-size: 17px;
+    }
+
+    .top-bar i {
+      margin-left: 8px;
+    }
+
+    .phones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* فاصله بین شماره‌ها */
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.phones span {
+  white-space: nowrap;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+
+  }
+  
+  @media (min-width: 769px) {
+  .navbar {
+    position: relative;
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 999;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+
+  }
+
+  .navbar.scrolled {
+    top: 0px;
+    position: fixed;
+    padding: 10px 30px; /* کوچکتر از حالت اولیه */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* ثابت یا کمی شفاف */
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+    width: 100%;
+    background: white;
+    z-index: 999;
+    transition: all 0.3s ease;
+    padding: 20px 20px;
+  }
+
+  .navbar.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px; /* کوچکتر از حالت اولیه */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+
+ 
+}
+
+  .menu-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  flex-direction: row-reverse; /* ← باعث می‌شود \"منو\" در سمت راست دکمه قرار گیرد */
+  cursor: pointer;
+}
+
+  
+  .menu-label {
+    font-size: 16px;
+    color: rgb(14, 14, 14);
+    position: relative;
+    left:30px;
+  }
+  
+  .menu-toggle {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #444;
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+    transition: 0.4s;
+  }
+  
+  .menu-toggle span:nth-child(1) { top: 0; }
+  .menu-toggle span:nth-child(2) { top: 7px; }
+  .menu-toggle span:nth-child(3) { top: 14px; }
+  
+  .menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 7px;
+  }
+  
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 7px;
+  }
+  
+  /* منوی موبایلی */
+  .mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw; /* حداکثر عرض صفحه */
+  padding: 10px 16px;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow-x: hidden;
+}
+
+  
+  .mobile-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .navbar .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #bfa046;
+    }
+
+ 
+  .navbar nav {
+      display: flex;
+      flex-wrap: wrap;
+      transition: max-height 0.5s ease;
+    }
+
+    .navbar nav a {
+      margin: 5px 12px;
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .navbar nav a:hover {
+      color: #bfa046;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #444;
+    }
+
+    .navbar.open nav {
+      display: flex;
+    }
+
+  
+  @media (min-width: 769px) {
+    .menu-wrapper, .mobile-menu { display: none; }
+  }
+    /* اسلایدر */
+    
+    .slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 20%;
+  right: 5%;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 15px 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  text-align: right;
+  z-index: 10;
+}
+
+.caption h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.slider-buttons a {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 8px 15px;
+  background-color: #d4af37;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .caption {
+    bottom: 10%;
+    right: 5%;
+    font-size: 1rem;
+  }
+
+  .caption h2 {
+    font-size: 1.2rem;
+  }
+
+  .slider-buttons a {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+
+
+
+
+ /* خوشامدگویی */
+ .welcome-section {
+  background: linear-gradient(to bottom, rgb(243, 205, 79), rgb(253, 245, 206));
+  color: #222;
+  padding: 15px 8px;
+  text-align: center;
+}
+
+.welcome-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.welcome-content h2 {
+  font-size: 2rem;
+  color: #3d2a00;
+  margin-bottom: 20px;
+}
+
+.welcome-content p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 15px;
+}
+
+.welcome-content ul {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+  margin: 20px 0;
+}
+
+.welcome-content ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.welcome-content ul li i {
+  margin-left: 8px;
+  color: #7a5800;
+}
+
+
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 15px 8px;
+  }
+
+  .welcome-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .welcome-section p,
+  .welcome-section ul li {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
+
+    
+   
+
+    .section-title {
+        text-align: center;
+        margin: 50px 20px 10px;
+    }
+ 
+    .section-title h2 {
+      display: inline-block;
+      font-size: 2rem;
+      font-family: serif;
+      padding: 10px 20px;
+      color: #a9822a;
+      text-shadow: 1px 1px 10px #ebc548 ;
+    }
+
+
+    .info-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px; /* کاهش فاصله بین باکس‌ها */
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .info-box {
+      flex: 1;
+      min-width: 400px;
+      background: #f8f8f8;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+
+
+
+     /* موقعیت مکانی */
+     .location-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .map, .working-hours {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .map 
+
+    .working-hours {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .map-buttons {
+      margin-top: 10px;
+    }
+
+    .map-buttons a {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 12px;
+      background-color: #bfa44d;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    
+
+
+ /* خدمات */
+ .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .service-box {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      border: 2px solid #bfa44d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .service-box img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid #bfa44d;
+    }
+
+    .service-box h3 {
+      color: #333;
+      margin: 10px 0 5px;
+    }
+
+    .service-box p {
+      padding: 0 15px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .service-box a {
+  margin: 15px 0;
+  text-decoration: none;
+  background: linear-gradient(180deg, #F4D95F 0%, #C08C01 100%);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+
+    .service-box a:hover {
+  background: linear-gradient(0deg, #F4D95F 0%, #C08C01 100%);
+  color: #222; /* اختیاری: برای جلوه برعکس */
+}
+
+@media (max-width: 768px) {
+  .services {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 20px;
+    gap: 16px;
+  }
+}
+
+   
+    .doctors-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 20px;
+  background-color: #fefefe;
+}
+
+/* استفاده مجدد از استایل doctor-box که قبلاً فرستادم */
+.doctor-box {
+  width: 300px;
+  border: 2px solid transparent;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: white;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.doctor-box:hover {
+  transform: translateY(-8px);
+}
+
+.doctor-image-frame {
+  padding: 5px;
+  background: linear-gradient(135deg, #f4d88e, #bfa046);
+}
+
+.doctor-image-frame img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+.doctor-details {
+  padding: 20px;
+}
+
+.doctor-details h3 {
+  margin: 10px 0 5px;
+  color: #222;
+  font-size: 1.2rem;
+}
+
+.doctor-specialty {
+  color: #bfa046;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+/* کالری*/
+.gallery-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.gallery-tabs {
+  margin-bottom: 24px;
+}
+
+.tab-button {
+  background: #e6e6e6;
+  border: none;
+  padding: 10px 20px;
+  margin: 8px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
+  font-size: 1rem;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .tab-button {
+    margin: 2px 4px;
+    padding: 8px 12px;
+  }
+
+  .gallery-tabs {
+    margin-bottom: 16px;
+  }
+}
+
+.tab-button:hover {
+  background: #ecbe3f8a;
+  color: white;
+}
+.tab-button.active {
+  background: #bfa046;
+  color: white;
+}
+
+.gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  font-size: 1rem;
+}
+
+.gallery-content img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}  
+
+/* ریسپانسیو در موبایل */
+@media (max-width: 768px) {
+  .doctor-box {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+
+    @media (max-width: 768px) {
+      .top-bar {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 13px;
+        padding: 8px 4px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+      }
+
+      .navbar nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        margin-top: 20px;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+
+      .navbar.open nav {
+        display: flex;
+      }
+
+      .navbar nav a {
+        margin: 8px 0;
+      }
+
+      .slide .caption {
+        font-size: 16px;
+        right: 20px;
+        left: 20px;
+      }
+
+      .slider-buttons {
+        right: 20px;
+        bottom: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .phones {
+    flex-wrap: wrap;
+    flex-direction: row; /* اصلاح شده: در یک خط */
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .phones span {
+    font-size: 0.8rem;
+  }
+
+    }
+  
+  
+
+    .info-box {
+      width: 100%;
+      max-width: 100%;
+      padding: 15px;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 250px;
+    }
+
+    .map-buttons a {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+  }
+
+
+  /* --- تغییرات شماره 3 - نهایی: رفع بیرون‌زدگی و تنظیم iframe --- */
+  .info-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .info-box {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    box-sizing: border-box;
+  }
+
+  .map iframe {
+    width: 100%;
+    height: 300px; /* Restored height */
+    border-radius: 8px;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    .info-section {
+      padding: 20px;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    .info-box {
+      width: 100%;
+      max-width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 250px;
+    }
+
+    .map-buttons a {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+  }
+  @media (max-width: 768px) {
+  .intro-section h2 {
+    font-size: 1.6rem !important;  /* کوچک‌تر از 3rem */
+  }
+}
+
+/* ===== فوتر طلایی زیبا ===== */
+.main-footer {
+  background: linear-gradient(135deg, #f4d88e, #bfa046);
+  color: #222;
+  padding: 60px 30px 30px;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-box {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-box h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #222;
+  border-bottom: 1px solid #444; 
+  margin: 20px 0;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin-bottom: 8px;
+}
+
+.footer-box ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-box ul li a:hover {
+  color: #000;
+}
+
+.gallery {
+  display: flex;
+  gap: 10px;
+}
+
+.gallery img {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* ===== انیمیشن fade-in-up ===== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate.fade-in-up {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  /* عنوان‌های اصلی (مثل معرفی کلینیک، آدرس و...) */
+  .section-title {
+    font-size: 1.8rem !important;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  /* عنوان‌های فرعی مثل نام پزشک، باکس‌ها، ساعات کاری و... */
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  /* متن‌های داخل پاراگراف‌ها */
+  p {
+    font-size: 1rem;
+  }
+
+  /* در صورت وجود، عناوین داخل intro-section هم تنظیم شود */
+  .intro-section h2 {
+    font-size: 2rem !important;
+  }
+}
+.about-clinic p {
+  text-align: justify;
+  text-justify: auto;
+  line-height: 1.8;
+}
+
+
+ 
+</style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div><i class="fas fa-map-marker-alt"></i> تهران، کامرانیه شمالی، لواسانی غربی، پلاک ۱۰</div>
+        <div class="phones">
+          <span><i class="fas fa-phone-alt"></i> 021-2280014</span>
+         
+          <span><i class="fas fa-mobile-alt"></i> 09191111111</span>
+        </div>
+      </div>
+      
+      <header class="navbar" id="navbar">
+        <div class="logo">کلینیک تخصصی امگا</div>
+      
+        <div class="menu-wrapper" onclick="toggleMenu()">
+          
+          <div class="menu-toggle" id="menuToggle">
+            
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="menu-label">منو</div>
+          </div>
+        </div>
+      
+        <nav>
+            <a href="#">صفحه اصلی</a>
+            <a href="#">درباره ما</a>
+            <a href="#">خدمات</a>
+            <a href="#">پزشکان</a>
+            <a href="#">مقالات</a>
+            <a href="#">گالری</a>
+            <a href="#">تماس با ما</a>
+          </nav>
+      </header>
+      
+      <script>
+
+        function toggleMenu() {
+            const navbar = document.getElementById("navbar");
+            const toggle = document.getElementById("menuToggle");
+            navbar.classList.toggle("open");
+            toggle.classList.toggle("open");
+          }
+          </script>
+
+<script>
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+  <script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+
+  <section class="slider swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <picture>
+          <source media="(max-aspect-ratio: 4/3)" srcset="mobile.slider1.png">
+          <img src="desk.slider1.png" alt="اسلاید 1" class="slider-image">
+        </picture>
+    
+      </div>
+  
+      <div class="swiper-slide">
+        <picture>
+          <source media="(max-aspect-ratio: 4/3)" srcset="mobile.slider2.png">
+          <img src="desk.slider2.png" alt="اسلاید 2" class="slider-image">
+        </picture>
+       
+      </div>
+
+      <div class="swiper-slide">
+        <picture>
+          <source media="(max-aspect-ratio: 4/3)" srcset="mobile.slider3.png">
+          <img src="desk.slider3.png" alt="اسلاید 3" class="slider-image">
+        </picture>
+       
+      </div>
+
+    </div>
+  
+    <!-- فلش‌های ناوبری -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  
+    <!-- دایره‌های پیمایش (اختیاری) -->
+    <div class="swiper-pagination"></div>
+  </section>
+  
+  
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      effect: 'slide',
+    });
+  </script>
+
+
+
+
+
+  <section class="welcome-section">
+    <div class="welcome-content">
+      <h2><i class="fas fa-tooth"></i> مرکز تخصصی دندانپزشکی دکتر محسن رضایی</h2>
+      <p>به شما بازدیدکننده گرامی خوش‌آمد می‌گوییم.</p>
+      <p>
+        این مرکز با بهره‌گیری از تیمی از بهترین متخصصان و اساتید دانشگاه‌های شهر تهران در زمینه‌های زیر آماده ارائه خدمات تخصصی و پیشرفته به شماست:
+      </p>
+      <ul>
+        <li><i class="fas fa-check-circle"></i><b> متخصص جراحی لثه و ایمپلنت</b></li>
+        <li><i class="fas fa-check-circle"></i><b> متخصص ترمیمی و زیبایی</b></li>
+        <li><i class="fas fa-check-circle"></i><b> متخصص درمان ریشه</b></li>
+      </ul>
+      <p>
+        کلینیک امگا با استفاده از جدیدترین تجهیزات و تکنولوژی روز، خدماتی چون <b>ترمیم‌های پیچیده، لمینیت، ونیر کامپوزیت، پروتز و روکش، ایمپلنت، جراحی‌های لثه، افزایش طول تاج، بازسازی استخوان، لیفت سینوس، درمان تخصصی ریشه و بلیچینگ </b>را با بالاترین کیفیت به شما عزیزان ارائه می‌دهد.
+      </p>
+    </div>
+  </section>
+  
+  
+
+
+  <div class="section-title">
+    <h2>آدرس و برنامه کاری</h2>
+  
+</div>
+  <section class="info-section">
+   
+    <div class="info-box">
+      <h3>ساعات کاری</h3>
+      <p><b>ترمیم:</b>یکشنبه تا چهارشنبه</p>
+      <p><b>درمان ریشه:</b>شنبه</p>
+      <p><b>ایمپلنت:</b>شنبه</p>
+    </div>
+    <div class="info-box">
+      <h3>موقعیت کلینیک</h3>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=35.8045,51.4643&hl=fa&z=14&amp;output=embed"></iframe>
+        <div class="map-buttons"><strong>مسیریابی با:</strong>
+            <a href="https://maps.google.com/?q=35.801309,51.464927" target="_blank">گوگل</a>
+            <a href="https://balad.ir/p/5u60U" target="_blank">بلد</a>
+            <a href="https://neshan.org/maps/@35.801309,51.464927,15z" target="_blank">نشان</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="section-title">
+    <h2>خدمات تخصصی</h2>
+   <br>
+</div>
+  <section class="services" id="services">
+    <div class="service-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2HAvRMcwBrdxOPpTYiLCcpk7VNqTetxoCaA&s" alt="ترمیم">
+      <h3>ترمیم</h3>
+      <p>خدمات ترمیمی دندان با بهترین مواد و تجهیزات.</p>
+      <a href="#">اطلاعات بیشتر</a>
+    </div>
+    <div class="service-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ-2dIMp-4lnmHiNXYQOKv509AJY1-rVLC8g&s" alt="درمان ریشه">
+      <h3>درمان ریشه</h3>
+      <p>درمان تخصصی عصب‌کشی توسط پزشکان مجرب.</p>
+      <a href="#">اطلاعات بیشتر</a>
+    </div>
+    <div class="service-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrwsrGvIcL1UilnBcpO5dfy4I4_I-HlKrDjg&s" alt="ایمپلنت">
+      <h3>ایمپلنت</h3>
+      <p>جایگزینی دندان‌های از دست رفته با ایمپلنت‌های با کیفیت.</p>
+      <a href="#">اطلاعات بیشتر</a>
+    </div>
+    <div class="service-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTOJA7tEd1ruUSrcFEUT-moVq0OK76PS5xvg&s" alt="بلیچینگ">
+      <h3>بلیچینگ</h3>
+      <p>سفید کردن دندان‌ها با روش‌های مدرن و ایمن.</p>
+      <a href="#">اطلاعات بیشتر</a>
+    </div>
+  </section>
+  <div class="section-title">
+    <h2>کادر پزشکان</h2>
+    <section class="doctors-section">
+        <div class="doctor-box">
+          <div class="doctor-image-frame">
+            <img src="https://membersearch.irimc.org/member/personalphoto?id=691a0452-ca65-40f8-b21d-c4a4b232af8f" alt="دکتر رضایی">
+          </div>
+          <div class="doctor-details">
+            <h3>آقای دکتر محسن رضایی</h3>
+            <p class="doctor-specialty">متخصص ترمیمی</p>
+            <p>انجام ترمیم‌های پیچیده و درمان‌های نزدیک به عصب</p>
+          </div>
+        </div>
+      
+        <div class="doctor-box">
+          <div class="doctor-image-frame">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_aQeIZ948k2300xJh6lpydaCjyscullBlsw&s" alt="دکتر الهام علی‌اصغر">
+          </div>
+          <div class="doctor-details">
+            <h3>خانم دکتر الهام علی‌اصغر</h3>
+            <p class="doctor-specialty">متخصص درمان ریشه</p>
+            <p> درمان ریشه‌های دشوار و حساس</p>
+          </div>
+        </div>
+      </section>
+      
+   <br>
+</div>
+
+<!-- ✅ گالری با سه بخش: نمونه کارها، تصاویر کلینیک، آموزش -->
+<section class="gallery-section">
+    <div class="section-title">
+    <h2>گالری</h2>
+</div>
+    <!-- دکمه‌های دسته‌بندی -->
+    <div class="gallery-tabs">
+      <button class="tab-button active" onclick="showGallery('work')">نمونه کارها</button>
+      <button class="tab-button" onclick="showGallery('clinic')">تصاویر کلینیک</button>
+      <button class="tab-button" onclick="showGallery('education')">آموزش</button>
+    </div>
+  
+    <!-- گالری‌ها -->
+    <div class="gallery-content" id="gallery-work">
+      <img src="work1.jpg" alt="نمونه کار 1">
+      <img src="work2.jpg" alt="نمونه کار 2">
+      <img src="work3.jpg" alt="نمونه کار 3">
+    </div>
+  
+    <div class="gallery-content" id="gallery-clinic" style="display: none;">
+      <img src="clinic1.jpg" alt="کلینیک 1">
+      <img src="clinic2.jpg" alt="کلینیک 2">
+    </div>
+  
+    <div class="gallery-content" id="gallery-education" style="display: none;">
+      <img src="edu1.jpg" alt="آموزش 1">
+      <img src="edu2.jpg" alt="آموزش 2">
+    </div>
+  </section>
+  
+
+  <script>
+    function showGallery(type) {
+      const sections = ['work', 'clinic', 'education'];
+      sections.forEach(id => {
+        document.getElementById('gallery-' + id).style.display = (id === type) ? 'flex' : 'none';
+      });
+    
+      const buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+    </script>
+
+
+
+<footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-box animate fade-in-up">
+        <h3>درباره کلینیک امگا</h3>
+        
+        <div class="about-clinic">
+            <p>
+              کلینیک تخصصی امگا با بهره‌گیری از پیشرفته‌ترین تجهیزات دندان‌پزشکی و همکاری تیمی مجرب از متخصصان در حوزه‌های مختلف دهان، دندان و زیبایی، محیطی آرام و حرفه‌ای را برای بیماران فراهم کرده است. هدف ما ارائه خدمات با کیفیت بالا، بر پایه احترام، دقت و آرامش برای مراجعین گرامی است.
+            </p>
+          </div>
+          
+      </div>
+      <div class="footer-box animate fade-in-up">
+        <h3>دسترسی سریع</h3>
+       
+        <ul>
+          <li><a href="#">صفحه اصلی</a></li>
+          <li><a href="#">خدمات</a></li>
+          <li><a href="#">پزشکان</a></li>
+          <li><a href="#">گالری</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div class="footer-box animate fade-in-up">
+        <h3>گالری</h3>
+        
+        <div class="gallery">
+          <img src="gallery1.jpg" alt="نمونه کار ۱">
+          <img src="gallery2.jpg" alt="نمونه کار ۲">
+          <img src="gallery3.jpg" alt="نمونه کار ۳">
+        </div>
+      </div>
+      <div class="footer-box animate fade-in-up">
+        <h3>ارتباط با ما</h3>
+        
+        <p>تلفن: 02122800319</p>
+        <p>آدرس: تهران، کامرانیه شمالی، پلاک ۱۰</p>
+        <p>ایمیل: info@omegadental.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+        <hr>
+      <p>© تمامی حقوق این سایت برای کلینیک امگا محفوظ است.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
