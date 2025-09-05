@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کلینیک امگا</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+
+    <link rel="stylesheet" href="assets/swiper/swiper-bundle.min.css" />
+
+
+
+  <style>
+   
+  
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('fonts/Vazirmatn/Vazirmatn-Regular.woff2') format('woff2'),
+       url('fonts/Vazirmatn/Vazirmatn-Regular.woff') format('woff'),
+       url('fonts/Vazirmatn/Vazirmatn-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+    
+  @font-face {
+  font-family: 'Entezar2';
+  src: url('fonts/Entezar/EntezarB3.woff2') format('woff2'),
+       url('fonts/Entezar/EntezarB3.woff') format('woff'),
+       url('fonts/Entezar/EntezarB3.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'Entezar1';
+  src: url('fonts/Entezar/Entezar2_v2.0.1.woff2') format('woff2'),
+       url('fonts/Entezar/Entezar2_v2.0.1.woff') format('woff'),
+       url('fonts/Entezar/Entezar2_v2.0.1.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+  
+    body {
+      margin: 0;
+      direction: rtl;
+      background-color: #fdfdfd;
+    }
+
+
+    html, body {
+  overflow-x: hidden;
+}
+
+:root {
+  --bg: #ffffff;
+  --clr-1: #e0a028;
+  --clr-2: #f8ce42;
+
+  --blur: 1rem;
+  --fs: clamp(3rem, 8vw, 7rem);
+  --ls: clamp(-1.75px, -0.25vw, -3.5px);
+}
+
+
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.box1 {
+  background: #282828;
+  height: 100%;
+  align-items: center;
+  padding: 0px 0px;
+  box-sizing: border-box;
+  
+}
+
+.content1 {
+  position: absolute;
+  top: 0;
+
+  background-color: var(--bg);
+  color: #fff;
+  text-align: center;
+ 
+  border-radius: 2px;
+}
+@media (max-width: 768px) {.content1 {
+ 
+  left: 0;
+}
+}
+@media (min-width: 768px) {.content1 {
+ 
+ right: 0;
+}
+}
+
+.title1 {
+  background:transparent;
+  padding: 3px 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  background-color: var(--bg);
+  color: #fff;
+  font-weight: 800;
+  font-family: "Vazirmatn";
+   height:55px;
+  position: relative;
+  overflow: hidden;
+  background: #282828;
+  margin: 0;
+  user-select: none;
+  pointer-events: none;
+}
+@media (max-width: 768px) {.title1 {
+    font-family: "Vazirmatn";
+  font-weight: 400;
+ font-size: 24px ; 
+ padding: 5px 5px;
+ height:48px;
+}
+}
+
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+
+
+.aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: darken;
+  pointer-events: none;
+}
+
+.aurora__item {
+  overflow: hidden;
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
+  background-color: var(--clr-1);
+  border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%;
+  filter: blur(var(--blur));
+  mix-blend-mode: overlay;
+}
+
+.aurora__item:nth-of-type(1) {
+  top: -20%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-1 12s ease-in-out infinite alternate;
+}
+
+
+.aurora__item:nth-of-type(2) {
+  background-color: var(--clr-2);
+ 
+  top: -10%;
+  animation: aurora-border 6s ease-in-out infinite,
+    aurora-2 12s ease-in-out infinite alternate;
+}
+
+@media (max-width: 768px) {
+
+
+@keyframes aurora-1 {
+  0% {
+    top: 0;
+    left: 0;
+  }
+
+  50% {
+    top: 10px;
+    left: 35%;
+  }
+
+  75% {
+    top: 15px;
+    left: 15%;
+  }
+
+  100% {
+    top: 6px;
+    left: 0;
+  }
+}
+
+
+
+@keyframes aurora-2 {
+  0% {
+    top: 0;
+    left: 20%;
+  }
+
+  40% {
+    top: 10%;
+    left: 85%;
+  }
+
+  65% {
+    top: 20%;
+    left: 50%;
+  }
+
+  100% {
+    top: 0;
+    left: 10%;
+  }
+}
+}
+
+@media (min-width: 768px) {
+
+
+@keyframes aurora-1 {
+  0% {
+    top: 0;
+    right: 0;
+  }
+
+  50% {
+    top: 100%;
+    right: 35%;
+  }
+
+  75% {
+    top: 100%;
+    right: 15%;
+  }
+
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+
+
+
+@keyframes aurora-2 {
+  0% {
+    bottom: 0;
+    left: 40%;
+  }
+
+  40% {
+    bottom: 100%;
+    left: 75%;
+  }
+
+  65% {
+    bottom: 40%;
+    left: 50%;
+  }
+
+  100% {
+    bottom: 0;
+    left: 50%;
+  }
+}
+}
+
+@keyframes aurora-border {
+  0% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+
+  25% {
+    border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+  }
+
+  50% {
+    border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+  }
+
+  75% {
+    border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+  }
+
+  100% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+}
+
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+
+  }
+  
+  @media (min-width: 769px) {
+  .navbar {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 999;
+    transition: all 0.8s ease-out;
+    box-sizing: border-box;
+
+  }
+
+  .navbar.scrolled {
+    top: 0px;
+    position: fixed;
+    padding: 10px 30px; /* کوچکتر از حالت اولیه */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.507);
+    background-color: whitesmoke; /* ثابت یا کمی شفاف */
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 999;
+    transition: all 0.8s ease-out;
+    padding: 20px 20px;
+    height:55px;
+  }
+
+  .navbar.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px; /* کوچکتر از حالت اولیه */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.507);
+    background-color: whitesmoke;
+    height:48px;
+  }
+
+ 
+}
+
+  .menu-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  flex-direction: row-reverse; /* ← باعث می‌شود \"منو\" در سمت راست دکمه قرار گیرد */
+  cursor: pointer;
+}
+
+  
+  .menu-label {
+    font-size: 16px;
+    color: rgb(14, 14, 14);
+    position: relative;
+    
+    bottom: 4px;
+  }
+  
+  .menu-toggle {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    cursor: pointer;
+  }
+  .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #444;
+    }
+
+    @media (min-width: 768px) {
+      .menu-toggle {
+        left:20px;
+      }
+      .menu-label {
+        left:30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        right:20px;
+      }
+      .menu-label {
+        right:30px;
+      }
+    }
+
+  
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #444;
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+    transition: 0.4s;
+  }
+  
+  .menu-toggle span:nth-child(1) { top: 0; }
+  .menu-toggle span:nth-child(2) { top: 7px; }
+  .menu-toggle span:nth-child(3) { top: 14px; }
+  
+  .menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 7px;
+  }
+  
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 7px;
+  }
+  
+  /* منوی موبایلی */
+  .mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw; /* حداکثر عرض صفحه */
+  padding: 10px 16px;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow-x: hidden;
+}
+
+  
+  .mobile-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+ 
+  .navbar nav {
+      display: flex;
+      flex-wrap: wrap;
+      transition: max-height 0.5s ease;
+    }
+
+    .navbar nav a {
+      margin: 5px 12px;
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .navbar nav a:hover {
+      color: #bfa046;
+    }
+
+   
+    .navbar.open nav {
+      display: flex;
+    }
+
+  
+  @media (min-width: 769px) {
+    .menu-wrapper, .mobile-menu { display: none; }
+  }
+    /* اسلایدر */
+    
+    .slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 20%;
+  right: 5%;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 15px 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  text-align: right;
+  z-index: 10;
+}
+
+.caption h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.slider-buttons a {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 8px 15px;
+  background-color: #d4af37;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .caption {
+    bottom: 10%;
+    right: 5%;
+    font-size: 1rem;
+  }
+
+  .caption h2 {
+    font-size: 1.2rem;
+  }
+
+  .slider-buttons a {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgba(255, 255, 255, 0.6); /* سفید نیمه شفاف */
+  font-size: 20px !important;       /* کوچک‌تر از حالت پیشفرض */
+  width: 35px;
+  height: 35px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px; /* اندازه آیکن فلش */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: rgba(255, 255, 255, 0.9); /* روی هاور کمی پررنگ‌تر */
+}
+
+.welcome-section {
+    background-color: #ffffff;
+}
+
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 20px auto;
+}
+
+.welcome-box {
+  flex: 1;
+  min-width: 300px;
+  background: #fff8e6;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  text-align: justify;
+}
+
+.welcome-box h2 {
+    font-family: Entezar2;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #a9822a;
+}
+
+.welcome-box p {
+   
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.welcome-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.welcome-box ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.welcome-box ul li i {
+  margin-left: 8px;
+  color: #bfa046;
+}
+
+/* در موبایل (تک ستونه بالا-پایین) */
+@media (max-width: 768px) {
+  .welcome-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+    
+  }
+}
+
+
+
+    
+   
+
+    .section-title {
+        text-align: center;
+     
+        background-color:#333333;
+        user-select: none;
+  pointer-events: none;
+    }
+ 
+  
+    .section-title h2 {
+      position: relative;
+      display: inline-block;
+      font-size: 2.7rem;
+      font-family: Entezar1;
+
+      color: #a9822a;
+  
+    }
+
+        /* المان‌های آماده برای انیمیشن */
+    .scroll-animate {
+    opacity: 0;
+    transform: translateY(40px); /* کمی پایین‌تر برای حرکت بیشتر */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .scroll-animate.show {
+    opacity: 1;
+    transform: translateY(0);
+    }
+
+    
+
+    .info-section {
+      background-color: #ffffff;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px; /* کاهش فاصله بین باکس‌ها */
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .info-box {
+      flex: 1;
+      min-width: 400px;
+      background: #f8f8f8;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+
+
+
+     /* موقعیت مکانی */
+     .location-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .map, .working-hours {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .working-hours {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .map-buttons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.map-buttons a {
+  position: relative;
+  display: inline-flex; /* برای آیکون + متن */
+  align-items: center;
+  gap: 6px; /* فاصله بین آیکون و متن */
+  margin: 5px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  background: #111; /* رنگ زمینه داخل دکمه */
+  z-index: 1;
+}
+
+/* بوردر گرادیانی */
+.map-buttons a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 2px; /* ضخامت بوردر */
+  background: linear-gradient(
+    90deg,
+    #7A7454 0%,
+    #EDE8AE 13.28%,
+    #958F5D 45.12%,
+    #B7B48B 61.4%,
+    #88845E 77.14%,
+    #EDE8AE 89.51%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude; 
+  z-index: -1;
+}
+
+/* آیکون داخل دکمه */
+.map-buttons a img {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+
+
+ /* خدمات */
+/* بخش اصلی خدمات */
+.services-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+.service-box {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border: 2px solid #bfa44d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid #bfa44d;
+}
+
+.service-box h3 {
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+.service-box p {
+  padding: 0 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.service-box a {
+  margin: 15px 0;
+  text-decoration: none;
+  background: linear-gradient(180deg, #F4D95F 0%, #C08C01 100%);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+.service-box a:hover {
+  background: linear-gradient(0deg, #F4D95F 0%, #C08C01 100%);
+  color: #222;
+}
+
+.other-services {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.5rem;
+  color: #cfb453; /* طلایی روشن */
+  margin-bottom: 20px;
+}
+
+/* بخش سایر خدمات */
+.services-other {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 30px 15px;
+  background-color: #191919;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.services-other .service-card {
+  position: relative;
+  border-radius: 12px;
+  padding: 5px;
+  background: #111; /* پس‌زمینه مشکی داخل */
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+/* لایه‌ی گرادیانی به عنوان بوردر */
+.services-other .service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2.5px; /* ضخامت بوردر */
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    #7A7454 0%,
+    #EDE8AE 13.28%,
+    #958F5D 45.12%,
+    #B7B48B 61.4%,
+    #88845E 77.14%,
+    #EDE8AE 89.51%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0); 
+  -webkit-mask-composite: xor;
+          mask-composite: exclude; 
+  z-index: -1;
+}
+
+.services-other .service-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #eecd5a;
+}
+
+.services-other .service-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.services-other .service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(238, 205, 90, 0.9);
+}
+
+
+
+
+
+   
+    .doctors-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 20px;
+  background-color: #fefefe;
+}
+
+/* استفاده مجدد از استایل doctor-box که قبلاً فرستادم */
+.doctor-box {
+  width: 300px;
+  border: 2px solid transparent;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: white;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.doctor-box:hover {
+  transform: translateY(-8px);
+}
+
+.doctor-image-frame {
+  padding: 5px;
+  background: linear-gradient(135deg, #f4d88e, #bfa046);
+}
+
+.doctor-image-frame img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+.doctor-details {
+  padding: 20px;
+}
+
+.doctor-details h3 {
+  margin: 10px 0 5px;
+  color: #222;
+  font-size: 1.2rem;
+}
+
+.doctor-specialty {
+  color: #bfa046;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+/* کالری*/
+.gallery-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.gallery-tabs {
+  margin-bottom: 24px;
+}
+
+.tab-button {
+  background: #e6e6e6;
+  border: none;
+  padding: 10px 20px;
+  margin: 8px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
+  font-size: 1rem;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .tab-button {
+    margin: 2px 4px;
+    padding: 8px 12px;
+  }
+
+  .gallery-tabs {
+    margin-bottom: 16px;
+  }
+}
+
+.tab-button:hover {
+  background: #ecbe3f8a;
+  color: white;
+}
+.tab-button.active {
+  background: #bfa046;
+  color: white;
+}
+
+.gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  font-size: 1rem;
+}
+
+.gallery-content img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}  
+
+.BAC{
+  position: relative;
+
+}
+
+.before-after-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+@media (max-width:768px){
+  .before-after-container {
+  width: 400px;
+  height: 300px;
+  }
+}
+
+@media (min-width:768px){
+  .before-after-container {
+  width: 600px;
+  height: 400px;
+  }
+}
+
+/* عکس‌ها */
+.before-img, .after-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* عکس بعد (ماسک از طریق clip-path) */
+.after-img {
+  clip-path: inset(0 50% 0 0); /* نصف سمت چپ اول دیده میشه */
+  transition: clip-path 0s;
+}
+
+/* خط جداکننده */
+.slider-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #eecd5a;
+  cursor: ew-resize;
+  z-index: 3;
+}
+
+/* دایره وسط خط */
+.slider-handle::before {
+  content: "⇆";
+  font-size: 18px;
+  color: #fff;
+  background: #766027;
+  border: 2px solid #eecd5a;
+  border-radius: 50%;
+  padding: 8px 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.before-after-container .before-img,
+.before-after-container .after-img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover;
+}
+
+ 
+
+
+
+
+/* ریسپانسیو در موبایل */
+@media (max-width: 768px) {
+  .doctor-box {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+
+    @media (max-width: 768px) {
+      .top-bar {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 13px;
+        padding: 1px 1px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 15px;
+      }
+
+     /* حالت پیش‌فرض (بسته) */
+.navbar nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  padding: 0 20px; /* بدون padding عمودی در حالت بسته */
+  box-sizing: border-box;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 0.4s ease, opacity 0.4s ease, padding 0.3s ease;
+}
+.navbar nav a {
+  
+  
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition-delay: 1s;
+}
+
+
+.navbar.open nav {
+  max-height: 400px;     /* به‌اندازه منو، نه خیلی زیاد */
+  opacity: 1;
+  padding: 15px 20px;    /* برگشت padding عمودی */
+  transform: translateY(0);
+}
+
+
+
+
+      .navbar nav a {
+        margin: 8px 0;
+      }
+
+      .slide .caption {
+        font-size: 16px;
+        right: 20px;
+        left: 20px;
+      }
+
+      .slider-buttons {
+        right: 20px;
+        bottom: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .phones {
+    flex-wrap: wrap;
+    flex-direction: row; /* اصلاح شده: در یک خط */
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .phones span {
+    font-size: 0.8rem;
+  }
+
+    }
+  
+  
+
+    .info-box {
+      width: 100%;
+      max-width: 100%;
+      padding: 15px;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 250px;
+    }
+
+    .map-buttons a {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+ 
+    .map-buttons img{
+      size: 5px 5px;
+    }
+
+  /* --- تغییرات شماره 3 - نهایی: رفع بیرون‌زدگی و تنظیم iframe --- */
+  .info-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .info-box {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    box-sizing: border-box;
+  }
+
+  .map iframe {
+    width: 100%;
+    height: 300px; /* Restored height */
+    border-radius: 8px;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    .info-section {
+      padding: 20px;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    .info-box {
+      width: 100%;
+      max-width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 250px;
+    }
+
+    .map-buttons a {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+  }
+  @media (max-width: 768px) {
+  .intro-section h2 {
+    font-size: 1.6rem !important;  /* کوچک‌تر از 3rem */
+  }
+}
+
+/* ===== فوتر طلایی زیبا ===== */
+.main-footer {
+  background: linear-gradient(135deg, #f4d88e, #bfa046);
+  color: #222;
+  padding: 60px 30px 30px;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-box {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-box h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #222;
+  border-bottom: 1px solid #444; 
+  margin: 20px 0;
+}
+
+.footer-box ul {
+  list-style: disc;
+  
+}
+
+.footer-box ul li {
+  margin-bottom: 8px;
+}
+
+.footer-box ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-box ul li a:hover {
+  color: #000;
+}
+
+.gallery {
+  display: flex;
+  gap: 10px;
+}
+
+.gallery img {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* ===== انیمیشن fade-in-up ===== */
+/* همه المنت‌هایی که قراره انیمیشن بگیرن از اول نامرئی باشن */
+.animate {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* انیمیشن ظاهر شدن */
+.fade-in-up {
+  animation: fadeInUp 1.5s ease forwards; /* سرعت کمی بیشتر شد */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate.fade-in-up {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  /* عنوان‌های اصلی (مثل معرفی کلینیک، آدرس و...) */
+  .section-title {
+  
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  /* عنوان‌های فرعی مثل نام پزشک، باکس‌ها، ساعات کاری و... */
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  /* متن‌های داخل پاراگراف‌ها */
+  p {
+    font-size: 1rem;
+  }
+
+  /* در صورت وجود، عناوین داخل intro-section هم تنظیم شود */
+  .intro-section h2 {
+    font-size: 2rem !important;
+  }
+}
+.about-clinic p {
+  text-align: justify;
+  text-justify: auto;
+  line-height: 1.8;
+}
+
+
+ 
+</style>
+</head>
+<body>
+
+  
+      
+      <header class="navbar" id="navbar">
+        <div class="box1">
+        <div class="content1">
+          <h1 class="title1">کلینیک تخصصی امگا
+            <div class="aurora">
+              <div class="aurora__item"></div>
+              <div class="aurora__item"></div>
+            </div>
+          </h1>
+        </div>
+      </div>
+
+        <div class="menu-wrapper" onclick="toggleMenu()">
+          
+          <div class="menu-toggle" id="menuToggle">
+            
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="menu-label">منو</div>
+          </div>
+        </div>
+      
+        <nav>
+            <a href="#">صفحه اصلی</a>
+            <a href="#">درباره ما</a>
+            <a href="#">خدمات</a>
+            <a href="#">پزشکان</a>
+            <a href="#">مقالات</a>
+            <a href="#">گالری</a>
+            <a href="#">تماس با ما</a>
+          </nav>
+      </header>
+      
+      <script>
+
+        function toggleMenu() {
+            const navbar = document.getElementById("navbar");
+            const toggle = document.getElementById("menuToggle");
+            navbar.classList.toggle("open");
+            toggle.classList.toggle("open");
+          }
+          </script>
+
+<script>
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 5) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+  <script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+    if (window.scrollY > 0) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+
+  <section class="slider swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <picture>
+          <source media="(max-aspect-ratio: 4/3)" srcset="mobile-slider1.JPG">
+          <img src="desk-slider1.JPG" alt="اسلاید 1" class="slider-image">
+        </picture>
+    
+      </div>
+  
+      <div class="swiper-slide">
+        <picture>
+          <source media="(max-aspect-ratio: 4/3)" srcset="mobile-slider2.JPG">
+          <img src="desk-slider2.JPG" alt="اسلاید 2" class="slider-image">
+        </picture>
+       
+      </div>
+
+      <div class="swiper-slide">
+        <picture>
+          <source media="(max-aspect-ratio: 4/3)" srcset="mobile-slider3.JPG">
+          <img src="desk-slider3.JPG" alt="اسلاید 3" class="slider-image">
+        </picture>
+       
+      </div>
+
+    </div>
+  
+    <!-- فلش‌های ناوبری -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  
+    <!-- دایره‌های پیمایش (اختیاری) -->
+   
+  </section>
+  
+  
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 4000,  // هر 4 ثانیه
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    effect: 'fade',   // تغییر به محو شدن
+    fadeEffect: {
+      crossFade: true  // محو و ظاهر شدن همزمان
+    },
+    speed: 1000 // مدت زمان انیمیشن محو شدن (1 ثانیه)
+  });
+</script>
+  
+<style>
+/* آفلاین*/
+.swiper:not(.swiper-initialized) .swiper-wrapper { display: block; }
+.swiper:not(.swiper-initialized) .swiper-slide { display: none; }
+.swiper:not(.swiper-initialized) .swiper-slide:first-child { display: block; }
+</style>
+
+<script src="assets/swiper/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: { delay: 4000, disableOnInteraction: false },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      speed: 1000
+    });
+  });
+</script>
+
+
+<section class="welcome-section">
+    <div class="welcome-container">
+      
+      <!-- معرفی کلینیک -->
+      <div class="welcome-box">
+        <h2><i class="fas fa-tooth"></i>  کلینیک تخصصی امگا</h2>
+        <p>
+          کلینیک امگا با بهره‌گیری از تیمی از بهترین متخصصان و اساتید دانشگاه‌های تهران، 
+          آماده ارائه خدمات تخصصی در زمینه‌های مختلف دندانپزشکی است.
+        </p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> متخصص جراحی لثه و ایمپلنت</li>
+          <li><i class="fas fa-check-circle"></i> متخصص ترمیمی و زیبایی</li>
+          <li><i class="fas fa-check-circle"></i> متخصص درمان ریشه</li>
+        </ul>
+      </div>
+  
+      <!-- معرفی دکتر رضایی -->
+      <div class="welcome-box">
+        <h2><i class="fas fa-user-md"></i>  دکتر محسن رضایی</h2>
+        <p>
+          آقای دکتر محسن رضایی، متخصص ترمیمی و زیبایی و عضو هیئت علمی دانشگاه علوم پزشکی شهید بهشتی، 
+          با تجربه‌ای گسترده در انجام ترمیم‌های پیچیده، لمینیت و ونیر، خدمات دندانپزشکی نوین را ارائه می‌دهند.
+        </p>
+        <p>
+          ایشان عضو هیئت مدیره انجمن متخصصین ترمیمی ایران نیز می‌باشند.
+        </p>
+      </div>
+  
+    </div>
+  </section>
+  
+  
+  
+
+<!-- ✅ گالری با سه بخش: نمونه کارها، تصاویر کلینیک، آموزش -->
+<div class="section-title" >
+  <h2>گالری</h2>
+  <br>
+</div>
+<section class="gallery-section scroll-animate">
+
+    <!-- دکمه‌های دسته‌بندی -->
+    <div class="gallery-tabs">
+      <button class="tab-button active" onclick="showGallery('work')">نمونه کارها</button>
+      <button class="tab-button" onclick="showGallery('clinic')">تصاویر کلینیک</button>
+      <button class="tab-button" onclick="showGallery('education')">آموزش</button>
+    </div>
+  
+    <!-- گالری‌ها -->
+    <div class="gallery-content" id="gallery-work">
+        
+       <div class="BAC">
+        <h2>ترمیم</h2>
+        <div class="before-after-container">
+          
+            <img src="before1.JPG" class="before-img" alt="قبل">
+            <div class="after-wrapper">
+              <img src="after1.JPG" class="after-img" alt="بعد">
+            </div>
+            <div class="slider-handle"></div>
+          </div>
+        </div>
+
+        <div class="BAC">
+          <h2>طراحی لبخند</h2>
+          <div class="before-after-container">
+            
+            <img src="before2.JPG" class="before-img" alt="قبل">
+            <div class="after-wrapper">
+              <img src="after2.JPG" class="after-img" alt="بعد">
+            </div>
+            <div class="slider-handle"></div>
+          </div>  
+        </div>
+    </div>
+  
+    <div class="gallery-content" id="gallery-clinic" style="display: none;">
+      <img src="clinic1.jpg" alt="کلینیک 1">
+      <img src="clinic2.jpg" alt="کلینیک 2">
+    </div>
+  
+    <div class="gallery-content" id="gallery-education" style="display: none;">
+      <img src="edu1.jpg" alt="آموزش 1">
+      <img src="edu2.jpg" alt="آموزش 2">
+    </div>
+  </section>
+  
+  <script>
+    document.querySelectorAll(".before-after-container").forEach(e=>{const t=e.querySelector(".after-img"),n=e.querySelector(".slider-handle");let o=!1;const r=()=>{o=!0},c=()=>{o=!1},l=r=>{if(!o)return;const c=e.getBoundingClientRect();let l=(r.touches?r.touches[0].clientX:r.clientX)-c.left;l<0&&(l=0),l>c.width&&(l=c.width),t.style.clipPath=`inset(0 ${c.width-l}px 0 0)`,n.style.left=l+"px"};n.addEventListener("mousedown",r),window.addEventListener("mouseup",c),window.addEventListener("mousemove",l),n.addEventListener("touchstart",()=>o=!0),window.addEventListener("touchend",c),window.addEventListener("touchmove",l)});
+ 
+</script>
+
+  <script>
+    function showGallery(type) {
+      const sections = ['work', 'clinic', 'education'];
+      sections.forEach(id => {
+        document.getElementById('gallery-' + id).style.display = (id === type) ? 'flex' : 'none';
+      });
+    
+      const buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+    </script>
+
+
+
+  <div class="section-title ">
+    <h2>خدمات تخصصی</h2>
+   <br>
+  </div>
+  <section class="services scroll-animate" id="services">
+    <div class="services-main">
+    <div class="service-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2HAvRMcwBrdxOPpTYiLCcpk7VNqTetxoCaA&s" alt="ترمیم">
+      <h3>ترمیم</h3>
+      <p>خدمات ترمیمی دندان با بهترین مواد و تجهیزات</p>
+      <a href="#">اطلاعات بیشتر</a>
+    </div>
+    <div class="service-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ-2dIMp-4lnmHiNXYQOKv509AJY1-rVLC8g&s" alt="درمان ریشه">
+      <h3>درمان ریشه</h3>
+      <p>درمان تخصصی عصب‌کشی</p>
+      <a href="#">اطلاعات بیشتر</a>
+    </div>
+    <div class="service-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrwsrGvIcL1UilnBcpO5dfy4I4_I-HlKrDjg&s" alt="ایمپلنت">
+      <h3>ایمپلنت</h3>
+      <p>جایگزینی دندان‌های از دست رفته</p>
+      <a href="#">اطلاعات بیشتر</a>
+    </div>
+    <div class="service-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTOJA7tEd1ruUSrcFEUT-moVq0OK76PS5xvg&s" alt="بلیچینگ">
+      <h3>بلیچینگ</h3>
+      <p>سفید کردن دندان‌ها با روش‌های مدرن و ایمن</p>
+      <a href="#">اطلاعات بیشتر</a>
+    </div>
+
+  </div>
+
+    <br>
+    <div class="other-services scroll-animate">
+      <h3 class="section-subtitle">سایر خدمات</h3>
+   
+
+      <div class="services-other">
+
+        <div class="service-card">
+          <h4>ونیر کامپوزیت</h4>
+          <p>بهبود زیبایی دندان‌ها با پوشش کامپوزیت.</p>
+        </div>
+        <div class="service-card">
+          <h4>جراحی لثه</h4>
+          <p>درمان مشکلات لثه و بهبود سلامت دهان.</p>
+        </div>
+        <div class="service-card">
+          <h4>افزایش طول تاج</h4>
+          <p>ایجاد تناسب در نمای دندان و لثه.</p>
+        </div>
+        <div class="service-card">
+          <h4>بازسازی استخوان</h4>
+          <p>تقویت استخوان فک برای ایمپلنت یا درمان‌های دیگر.</p>
+        </div>
+        <div class="service-card">
+          <h4>لیفت سینوس</h4>
+          <p>افزایش ارتفاع استخوان فک بالا برای ایمپلنت.</p>
+        </div>
+        <div class="service-card">
+          <h4>بلیچینگ</h4>
+          <p>سفید کردن دندان‌ها به روشی ایمن و سریع.</p>
+        </div>
+        <div class="service-card">
+          <h4>پروتز و روکش</h4>
+          <p>بازگرداندن عملکرد و زیبایی دندان‌ها.</p>
+        </div>
+        <div class="service-card">
+          <h4>طراحی لبخند</h4>
+          <p>ایجاد لبخندی زیبا و متناسب با چهره.</p>
+        </div>
+        <div class="service-card">
+          <h4>ارتودنسی</h4>
+          <p>مرتب و منظم کردن دندان‌ها.</p>
+        </div>
+        <div class="service-card">
+          <h4>سیلانت</h4>
+          <p>شیاربندی به منظور پیشگیری از پوسیدگی دندان.</p>
+        </div>
+      </div>
+  
+    </div>
+    
+
+  </section>
+  <div class="section-title ">
+    <h2>کادر پزشکان</h2>
+  </div>
+    <section class="doctors-section scroll-animate">
+        <div class="doctor-box">
+          <div class="doctor-image-frame">
+            <img src="https://membersearch.irimc.org/member/personalphoto?id=691a0452-ca65-40f8-b21d-c4a4b232af8f" alt="دکتر رضایی">
+          </div>
+          <div class="doctor-details">
+            <h3>آقای دکتر محسن رضایی</h3>
+            <p class="doctor-specialty">متخصص ترمیمی</p>
+            <p>انجام ترمیم‌های پیچیده حتی برای دندان های غیرقابل ترمیم</p>
+          </div>
+        </div>
+      
+        <div class="doctor-box">
+          <div class="doctor-image-frame">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_aQeIZ948k2300xJh6lpydaCjyscullBlsw&s" alt="دکتر الهام علی‌اصغر">
+          </div>
+          <div class="doctor-details">
+            <h3>خانم دکتر الهام علی‌اصغر</h3>
+            <p class="doctor-specialty">فلوشیپ لیزر</p>
+            <p> ترمیم و زیبایی</p>
+          </div>
+        </div>
+      </section>
+      
+  <div class="section-title">
+    <h2>آدرس و برنامه کاری</h2>
+  <br>
+  </div>
+
+  <section class="info-section scroll-animate">
+   
+    <div class="info-box">
+      <h3 style="text-align: center;">ساعات کاری</h3>
+      <br>
+      <p><b>متخصص ترمیم:</b>یکشنبه تا چهارشنبه</p>
+      <p><b> متخصص درمان ریشه:</b>شنبه</p>
+      <p><b>متخصص ایمپلنت:</b>شنبه</p>
+    </div>
+    <div class="info-box">
+      <h3 style="text-align: center;">موقعیت کلینیک</h3>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=35.8045,51.4643&hl=fa&z=14&amp;output=embed"></iframe>
+        <div class="map-buttons">
+          مسیریابی با:
+          <a href="https://maps.google.com/?q=35.801309,51.464927" target="_blank">
+            <img src="googlemap.webp" alt="Google Maps Logo"> گوگل
+          </a>
+          <a href="https://balad.ir/p/5u60U" target="_blank"> <img src="balad.webp" alt="Balad Logo">  بلد</a>
+            <a href="https://neshan.org/maps/@35.801309,51.464927,15z" target="_blank"> <img src="neshan.webp" alt="Neshan Logo"> نشان</a>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+   
+  <div class="section-title">
+    <h2>سوالات متداول</h2>
+  <br>
+  </div>
+
+ 
+  <section class="faq-section scroll-animate">
+  
+    <div class="faq-container">
+      <!-- سوال ۱ -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>چگونه وقت بگیرم؟</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>برای دریافت نوبت می‌توانید با شماره مطب تماس بگیرید یا از طریق واتساپ پیام ارسال کنید.</p>
+        </div>
+      </div>
+  
+      <!-- سوال ۲ -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>آیا خدمات زیبایی هم انجام می‌دهید؟</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>بله، تمامی خدمات زیبایی از جمله طراحی لبخند و لمینت ارائه می‌شود.</p>
+        </div>
+      </div>
+  
+      <!-- سوالات اضافی (پنهان شده در ابتدا) -->
+      <!-- 3سوال  -->
+      <div class="faq-extra hidden">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>هزینه درمان‌ها چگونه محاسبه می‌شود؟</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>هزینه بر اساس نوع درمان و شرایط بیمار محاسبه می‌شود و پس از معاینه اعلام خواهد شد.</p>
+          </div>
+        </div>
+        <!-- 4سوال  -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>آیا کلینیک مجهز به تجهیزات مدرن است؟</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>بله، کلینیک امگا از تجهیزات مدرن و به‌روز برای ارائه خدمات استفاده می‌کند.</p>
+          </div>
+        </div>
+        <!-- 5سوال  -->
+        <div class="faq-item">
+            <div class="faq-question">
+            <span>آیا از روش های طراحی لبخند استفاده میشود ؟</span>
+            <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+            <p>بله، کلینیک امگا از اکنیک های طراحی لبخند استفاده می‌کند.</p>
+            </div>
+        </div>
+        </div>
+
+      <!-- دکمه نمایش همه -->
+      <div class="faq-toggle">
+        <button id="toggleFaq">نمایش همه</button>
+      </div>
+    </div>
+  </section>
+
+  <style> 
+  .faq-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+  
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* باکس سوال */
+  .faq-question {
+    background: #d4af37; /* طلایی */
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  .faq-question:hover {
+    background: #c09c2f;
+  }
+  .faq-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* باکس جواب */
+  .faq-answer {
+    background: rgba(212, 175, 55, 0.15); /* طلایی ملایم‌تر */
+    padding: 15px 20px;
+    border-radius: 0 0 12px 12px;
+    margin-top: -10px;
+    display: none;
+    animation: fadeIn 0.4s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* سوالات اضافی */
+  .faq-extra.hidden {
+    display: none;
+  }
+  
+  /* دکمه نمایش همه */
+  .faq-toggle {
+    text-align: right;
+  }
+  .faq-toggle button {
+    background: #fff;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .faq-toggle button:hover {
+    background: #d4af37;
+    color: #fff;
+  }
+  .faq-extra .faq-question{
+    margin-bottom: 10px;
+  }
+</style>
+
+<script>
+    document.querySelectorAll(".faq-question").forEach(question => {
+      question.addEventListener("click", () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector(".faq-icon");
+    
+        // بستن همه جواب‌ها به جز انتخاب‌شده
+        document.querySelectorAll(".faq-answer").forEach(ans => {
+          if (ans !== answer) ans.style.display = "none";
+        });
+        document.querySelectorAll(".faq-icon").forEach(ic => {
+          if (ic !== icon) ic.textContent = "+";
+        });
+    
+        // باز و بسته کردن همین سوال
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+          icon.textContent = "+";
+        } else {
+          answer.style.display = "block";
+          icon.textContent = "−";
+        }
+      });
+    });
+    
+    // نمایش همه / پنهان کردن
+    const toggleBtn = document.getElementById("toggleFaq");
+    const extraFaq = document.querySelector(".faq-extra");
+    
+    toggleBtn.addEventListener("click", () => {
+      if (extraFaq.classList.contains("hidden")) {
+        extraFaq.classList.remove("hidden");
+        toggleBtn.textContent = "پنهان کردن";
+      } else {
+        extraFaq.classList.add("hidden");
+        toggleBtn.textContent = "نمایش همه";
+      }
+    });
+    </script>
+    
+
+
+
+  <div class="mobile-bottom-bar">
+    <button onclick="openModal('servicesModal')"><i class="fas fa-tooth"></i><br>خدمات</button>
+    <button onclick="openModal('contactModal')"><i class="fas fa-comments"></i><br>ارتباط</button>
+    
+    <!-- دکمه تماس متفاوت (دایره‌ای) -->
+    <a href="tel:02122800319" class="call-btn">
+      <i class="fas fa-phone"></i>
+    </a>
+    
+    <button onclick="openModal('mapModal')"><i class="fas fa-map-marker-alt"></i><br>مسیریابی</button>
+    <button onclick="openModal('galleryModal')"><i class="fas fa-image"></i><br>گالری</button>
+  </div>
+  
+  <!-- ✅ مودال خدمات -->
+  <div id="servicesModal" class="custom-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span onclick="closeModal('servicesModal')" class="close-btn">✖ بستن</span>
+      </div>
+      <button>ترمیم</button>
+      <button>زیبایی</button>
+      <button>عصب کشی</button>
+    </div>
+  </div>
+  
+  <!-- ✅ مودال ارتباط -->
+  <div id="contactModal" class="custom-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span onclick="closeModal('contactModal')" class="close-btn">✖ بستن</span>
+      </div>
+      <button>تلفن مطب</button>
+      <button>تلفن منشی</button>
+      <button>واتساپ</button>
+      <button>اینستاگرام</button>
+    </div>
+  </div>
+  
+  <!-- ✅ مودال مسیریابی -->
+  <div id="mapModal" class="custom-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span onclick="closeModal('mapModal')" class="close-btn">✖ بستن</span>
+      </div>
+      <button>گوگل</button>
+      <button>بلد</button>
+      <button>نشان</button>
+    </div>
+  </div>
+  
+  <!-- ✅ مودال گالری -->
+  <div id="galleryModal" class="custom-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span onclick="closeModal('galleryModal')" class="close-btn">✖ بستن</span>
+      </div>
+      <button>نمونه کارها</button>
+      <button>تجهیزات</button>
+      <button>آموزش</button>
+    </div>
+  </div>
+  
+  <style>
+  /* ==== نوار پایینی موبایل ==== */
+  .mobile-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0; right: 0;
+    height: 60px;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    z-index: 999;
+  }
+  
+  .mobile-bottom-bar button {
+    background: none;
+    border: none;
+    font-size: 12px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .mobile-bottom-bar button i {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+  
+  /* دکمه تماس دایره‌ای */
+  .call-btn {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #f4d95f, #c08c01);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-top: -30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-decoration: none;
+  }
+  
+  /* ==== مودال ==== */
+  .custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+  }
+  
+  .modal-content button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border: none;
+    background: linear-gradient(135deg, #f4d95f, #c08c01);
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .close-btn {
+    cursor: pointer;
+    font-size: 16px;
+    color: #c00;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  /* فقط در موبایل نمایش داده شود */
+  @media (min-width: 769px) {
+    .mobile-bottom-bar { display: none; }
+  }
+  </style>
+  
+  <script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+  </script>
+  
+
+
+
+<footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-box animate">
+        <h3>درباره کلینیک امگا</h3>
+        
+        <div class="about-clinic">
+            <p>
+              کلینیک تخصصی امگا با بهره‌گیری از پیشرفته‌ترین تجهیزات دندان‌پزشکی و همکاری تیمی مجرب از متخصصان در حوزه‌های مختلف دهان، دندان و زیبایی، محیطی آرام و حرفه‌ای را برای بیماران فراهم کرده است. هدف ما ارائه خدمات با کیفیت بالا، بر پایه احترام، دقت و آرامش برای مراجعین گرامی است.
+            </p>
+          </div>
+          
+      </div>
+      <div class="footer-box animate">
+        <h3>دسترسی سریع</h3>
+       
+        <ul>
+          <li><a href="#">صفحه اصلی</a></li>
+          <li><a href="#">خدمات</a></li>
+          <li><a href="#">پزشکان</a></li>
+          <li><a href="#">گالری</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div class="footer-box animate">
+        <h3>گالری</h3>
+        
+        <div class="gallery">
+          <img src="gallery1.jpg" alt="نمونه کار ۱">
+          <img src="gallery2.jpg" alt="نمونه کار ۲">
+          <img src="gallery3.jpg" alt="نمونه کار ۳">
+        </div>
+      </div>
+      <div class="footer-box animate">
+        <h3>ارتباط با ما</h3>
+        
+        <p>تلفن: 02122800319</p>
+        <p>آدرس: تهران، کامرانیه شمالی، پلاک ۱۰</p>
+        <p>ایمیل: info@omegadental.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+        <hr style="border-style: dotted; border-width:1px 0px 0px 0px">
+      <p>© تمامی حقوق این سایت برای کلینیک امگا محفوظ است.</p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const elements = document.querySelectorAll(".animate");
+    
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // برای هر ستون تأخیر جداگانه بگذاریم
+            entry.target.style.animationDelay = `${[...elements].indexOf(entry.target) * 0.3}s`;
+            entry.target.classList.add("fade-in-up");
+            observer.unobserve(entry.target); // فقط یکبار اجرا بشه
+          }
+        });
+      }, { threshold: 0.1 });
+    
+      elements.forEach(el => observer.observe(el));
+    });
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll(".scroll-animate");
+    
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target); // فقط یکبار اجرا بشه
+          }
+        });
+      }, { threshold: 0.1 });
+    
+      sections.forEach(sec => observer.observe(sec));
+    });
+    </script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const footer = document.querySelector(".main-footer");
+          const bar = document.querySelector(".mobile-bottom-bar");
+          if (footer && bar) {
+            footer.style.paddingBottom = bar.offsetHeight + 20 + "px";
+          }
+        });
+        </script>
+        
+
+</body>
+</html>
