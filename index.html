@@ -1,0 +1,3918 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کلینیک امگا</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+
+    <link rel="stylesheet" href="assets/swiper/swiper-bundle.min.css" />
+
+
+
+  <style>
+   
+  
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('fonts/Vazirmatn/Vazirmatn-Regular.woff2') format('woff2'),
+       url('fonts/Vazirmatn/Vazirmatn-Regular.woff') format('woff'),
+       url('fonts/Vazirmatn/Vazirmatn-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+    
+
+
+
+
+
+
+
+  
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      direction: rtl;
+      background-color: #fdfdfd;
+    }
+
+
+    html, body {
+  overflow-x: hidden;
+}
+
+:root {
+  --bg: #ffffff;
+  --clr-1: #e0a028;
+  --clr-2: #f8ce42;
+
+  --blur: 1rem;
+  --fs: clamp(3rem, 8vw, 7rem);
+  --ls: clamp(-1.75px, -0.25vw, -3.5px);
+}
+
+
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+/* ===== پایه ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Vazirmatn", sans-serif;
+  margin: 0;
+}
+
+/* ===== هدر ===== */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  color: #fff;
+  z-index: 9999;
+  transition: all 0.4s ease;
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  transition: all 0.4s ease;
+}
+
+/* ===== لوگو ===== */
+.logo{
+  margin: -40px;
+}
+
+.logo img {
+  height: 130px;
+  transition: all 0.4s ease;
+}
+
+/* ===== عنوان ===== */
+.site-title {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ===== منوی دسکتاپ ===== */
+.nav-desktop {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-desktop a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.nav-desktop a:hover {
+  color: #e4b900;
+}
+
+/* ===== حالت اسکرول ===== */
+.navbar.scrolled {
+  background: #000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.navbar.scrolled .navbar-inner {
+  padding: 4px 30px;
+}
+
+.navbar.scrolled .logo img {
+  height: 82px;
+}
+
+/* ===== منوی موبایل ===== */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.menu-btn span {
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.4s ease;
+}
+
+/* حالت ضربدر */
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+
+
+
+
+@media (max-width: 992px) {
+  .menu {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 6px;
+    
+  }
+  .menu__icon {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 10000;
+    
+  }
+  .menu__line {
+    position: absolute;
+    left: 0;
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    pointer-events: none;
+  }
+  .menu__line--1 { top: 0; }
+  .menu__line--2 { top: 0; bottom: 0; margin: auto; }
+  .menu__line--3 { bottom: 0; }
+
+  /* ✅ منوی شماره 2 فقط همین قسمت */
+  .menu--close2 .menu__line--1 {
+    transition: transform 0.3s ease-in-out, top 0.2s ease-in-out 0.3s;
+  }
+  .menu--close2 .menu__line--1:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: transform 0.1s ease-in-out 0.2s;
+  }
+  .menu--close2 .menu__line--2 {
+    transition: opacity 0s ease-in-out 0.3s;
+  }
+  .menu--close2 .menu__line--3 {
+    transition: opacity 0s ease-in-out 0.3s, bottom 0.2s ease-in-out 0.3s;
+  }
+  .menu--close2.open .menu__line--1 {
+    top: 8.5px;
+    transform: rotate(135deg);
+    transition: top 0.3s ease-in-out, transform 0.3s linear 0.3s;
+    background: red;
+  }
+  .menu--close2.open .menu__line--1:before {
+    transform: rotate(90deg);
+    transition: transform 0.1s ease-in-out 0.3s;
+    background: red;
+  }
+  .menu--close2.open .menu__line--2 {
+    opacity: 0;
+    transition: opacity 0s ease-in-out 0.3s;
+  }
+  .menu--close2.open .menu__line--3 {
+    bottom: 8.5px;
+    opacity: 0;
+    transition: bottom 0.3s ease-in-out, opacity 0s ease-in-out 0.3s;
+  }
+
+
+
+
+
+
+  /* ===== منوی بازشونده موبایل ===== */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 75%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    transition: left 0.4s ease;
+    z-index: 9998;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mobile-menu li {
+    margin: 20px 0;
+  }
+
+  .mobile-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+
+  .mobile-menu a:hover {
+    color: #e4b900;
+  }
+
+  /* ===== افکت پشت صفحه ===== */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 9997;
+  }
+
+  /* ===== حالت فعال ===== */
+  .mobile-menu.active {
+    left: 0;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* ===== واکنش‌گرایی ===== */
+@media (max-width: 992px) {
+  .nav-desktop {
+    display: none;
+  }
+  .menu-btn {
+    display: flex;
+  }
+  .site-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo img {
+    height: 90px;
+  }
+  .site-title {
+    font-size: 15px;
+  }
+  .navbar.scrolled .logo img {
+  height: 62px;
+}
+}
+
+  
+
+
+
+    
+
+  @media (min-width: 992px) {
+    .menu-wrapper, .mobile-menu { display: none; }
+  }
+    /* اسلایدر */
+    
+    .slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 20%;
+  right: 5%;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 15px 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  text-align: right;
+  z-index: 10;
+}
+
+.caption h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.slider-buttons a {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 8px 15px;
+  background-color: #d4af37;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .caption {
+    bottom: 10%;
+    right: 5%;
+    font-size: 1rem;
+  }
+
+  .caption h2 {
+    font-size: 1.2rem;
+  }
+
+  .slider-buttons a {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: rgba(255, 255, 255, 0.6); /* سفید نیمه شفاف */
+  font-size: 20px ;       /* کوچک‌تر از حالت پیشفرض */
+  width: 25px;
+  height: 25px;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 40px; /* اندازه آیکن فلش */
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  color: rgba(255, 255, 255, 0.9); /* روی هاور کمی پررنگ‌تر */
+}
+
+
+.intro-section {
+  margin: 40px auto;
+  padding: 30px;
+  max-width: 1000px;
+  background: #fff;                /* سفید مثل روزنامه */
+  border: 20px solid transparent;  /* ضخامت قاب */
+  border-image: url('ornament-border.svg') 40 round; /* قاب SVG */
+}
+
+.intro-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.intro-text {
+  column-count: 2;          /* دو ستونه */
+  column-gap: 40px;
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* موبایل: یک ستون */
+@media (max-width: 768px) {
+  .intro-text {
+    column-count: 1;
+  }
+}
+
+.more-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.more-btn a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, rgb(211,180,125), rgb(154,115,51));
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.more-btn a:hover {
+  background: linear-gradient(90deg, rgb(154,115,51), rgb(211,180,125));
+  color: #222;
+}
+
+
+
+
+.welcome-section {
+    background-color: #ffffff;
+}
+
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 20px auto;
+}
+
+.welcome-box {
+  flex: 1;
+  min-width: 300px;
+  background: #fff8e6;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  text-align: justify;
+}
+
+.welcome-box h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #a9822a;
+}
+
+.welcome-box p {
+   
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.welcome-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.welcome-box ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.welcome-box ul li i {
+  margin-left: 8px;
+  color: #bfa046;
+}
+
+/* در موبایل (تک ستونه بالا-پایین) */
+@media (max-width: 768px) {
+  .welcome-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+    
+  }
+}
+
+
+
+.vip-section {
+  margin: 60px auto;
+  max-width: 1600px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #f7e8b3;
+    color: #333333;
+    box-shadow: 0px 10px 25px rgb(0 0 0 / 10%);
+}
+
+.vip-header {
+  position: relative;
+}
+
+.vip-header img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* حالت دسکتاپ (همون که الان داری) */
+.vip-box {
+  position: absolute;
+  bottom: -110px; /* روی مرز عکس و طلایی */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 50px;
+  border-radius: 12px;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  z-index: 2;
+  width:70%;
+}
+
+
+
+.vip-features {
+  padding: 170px 20px 30px; /* فضای بالا بیشتر شده تا باکس وسط جا بشه */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 0; /* دیگه سفید نمیاد */
+}
+
+.feature-box {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  min-width: 150px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  border: 1px solid #eecd5a;
+}
+
+
+/* حالت موبایل */
+@media (max-width: 768px) {
+  .vip-header img {
+    height: 250px; /* عکس موبایل کوتاه‌تر */
+  }
+
+  .vip-box {
+    bottom: -100px;     /* کمتر روی طلایی بیفته */
+    padding: 15px;
+    width:90%
+  }
+
+  .vip-box h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .vip-box p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .vip-features {
+    padding-top: 130px; /* جا برای VIP box */
+  }
+}
+
+
+.congress-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 20px;
+  text-align: center;
+  background: #fff8e6;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  text-align: justify;
+}
+
+.congress-text h2 {
+  color: #766027;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.congress-text p {
+  color: #444;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.congress-slider {
+  margin-top: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.congress-slider img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* دکمه‌های فلش */
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgba(255, 255, 255, 0.8);
+  transition: 0.3s;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #eecd5a;
+}
+
+/* موبایل */
+@media (max-width: 768px) {
+  .congress-text h2 {
+    font-size: 20px;
+  }
+  .congress-slider img {
+    height: 250px;
+  }
+}
+
+   
+
+.instagram-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fafafa; /* پس‌زمینه ملایم */
+}
+
+.insta-header h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.insta-header p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.insta-image img {
+  width: 100%;
+  max-width: 1200px; /* در دسکتاپ خیلی بزرگ‌تر نشه */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+    .section-title {
+        text-align: center;
+     
+        background-color:#333333;
+        user-select: none;
+  pointer-events: none;
+    }
+ 
+  
+    .section-title h2 {
+      position: relative;
+      display: inline-block;
+      font-size: 2.7rem;
+
+      color: #a9822a;
+  
+    }
+
+        /* المان‌های آماده برای انیمیشن */
+    .scroll-animate {
+    opacity: 0;
+    transform: translateY(40px); /* کمی پایین‌تر برای حرکت بیشتر */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .scroll-animate.show {
+    opacity: 1;
+    transform: translateY(0);
+    }
+
+    
+
+    .info-section {
+      background-color: #ffffff;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px; /* کاهش فاصله بین باکس‌ها */
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .info-box {
+      flex: 1;
+      min-width: 400px;
+      background: #f8f8f8;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+
+
+
+     /* موقعیت مکانی */
+     .location-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .map, .working-hours {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .working-hours {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .map-buttons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.map-buttons a {
+  position: relative;
+  display: inline-flex; /* برای آیکون + متن */
+  align-items: center;
+  gap: 6px; /* فاصله بین آیکون و متن */
+  margin: 5px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  background: #111; /* رنگ زمینه داخل دکمه */
+  z-index: 1;
+}
+
+/* بوردر گرادیانی */
+.map-buttons a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 2px; /* ضخامت بوردر */
+  background: linear-gradient(
+    90deg,
+    #7A7454 0%,
+    #EDE8AE 13.28%,
+    #958F5D 45.12%,
+    #B7B48B 61.4%,
+    #88845E 77.14%,
+    #EDE8AE 89.51%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude; 
+  z-index: -1;
+}
+
+/* آیکون داخل دکمه */
+.map-buttons a img {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+
+
+ /* خدمات */
+/* بخش اصلی خدمات */
+.services-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+.service-box {
+  background: black;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border: 2px solid #bfa44d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.service-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid #bfa44d;
+}
+
+.service-box h3 {
+  color: #5b5b5b;
+  margin: 10px 0 5px;
+}
+
+.service-box p {
+  padding: 0 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.service-box a {
+  margin: 15px 0;
+  text-decoration: none;
+  background: linear-gradient(180deg, #F4D95F 0%, #C08C01 100%);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+.service-box a:hover {
+  background: linear-gradient(0deg, #F4D95F 0%, #C08C01 100%);
+  color: #222;
+}
+
+.other-services {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.5rem;
+  color: #cfb453; /* طلایی روشن */
+  margin-bottom: 20px;
+}
+
+/* بخش سایر خدمات */
+.services-other {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 30px 15px;
+  background-color: #191919;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.services-other .service-card {
+  position: relative;
+  border-radius: 12px;
+  padding: 5px;
+  background: #111; /* پس‌زمینه مشکی داخل */
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+/* لایه‌ی گرادیانی به عنوان بوردر */
+.services-other .service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2.5px; /* ضخامت بوردر */
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    #7A7454 0%,
+    #EDE8AE 13.28%,
+    #958F5D 45.12%,
+    #B7B48B 61.4%,
+    #88845E 77.14%,
+    #EDE8AE 89.51%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0); 
+  -webkit-mask-composite: xor;
+          mask-composite: exclude; 
+  z-index: -1;
+}
+
+.services-other .service-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #eecd5a;
+}
+
+.services-other .service-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.services-other .service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(238, 205, 90, 0.9);
+}
+
+
+
+
+
+   
+    .doctors-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 20px;
+  background-color: #fefefe;
+}
+
+/* استفاده مجدد از استایل doctor-box که قبلاً فرستادم */
+.doctor-box {
+  width: 300px;
+  border: 2px solid transparent;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: white;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.doctor-box:hover {
+  transform: translateY(-8px);
+}
+
+.doctor-image-frame {
+  padding: 5px;
+  background: linear-gradient(135deg, #f4d88e, #bfa046);
+}
+
+.doctor-image-frame img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+.doctor-details {
+  padding: 20px;
+}
+
+.doctor-details h3 {
+  margin: 10px 0 5px;
+  color: #222;
+  font-size: 1.2rem;
+}
+
+.doctor-specialty {
+  color: #bfa046;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+/* کالری*/
+.gallery-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.gallery-tabs {
+  margin-bottom: 24px;
+}
+
+.tab-button {
+  background: #e6e6e6;
+  border: none;
+  padding: 10px 20px;
+  margin: 8px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
+  font-size: 1rem;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .tab-button {
+    margin: 2px 4px;
+    padding: 8px 12px;
+  }
+
+  .gallery-tabs {
+    margin-bottom: 16px;
+  }
+}
+
+.tab-button:hover {
+  background: #ecbe3f8a;
+  color: white;
+}
+.tab-button.active {
+  background: #bfa046;
+  color: white;
+}
+
+.gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  font-size: 1rem;
+}
+
+.gallery-content img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}  
+
+.BAC{
+  position: relative;
+
+}
+
+.before-after-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+@media (max-width:768px){
+  .before-after-container {
+  width: 400px;
+  height: 300px;
+  }
+}
+
+@media (min-width:768px){
+  .before-after-container {
+  width: 600px;
+  height: 400px;
+  }
+}
+
+/* عکس‌ها */
+.before-img, .after-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* عکس بعد (ماسک از طریق clip-path) */
+.after-img {
+  clip-path: inset(0 50% 0 0); /* نصف سمت چپ اول دیده میشه */
+  transition: clip-path 0s;
+}
+
+/* خط جداکننده */
+.slider-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #eecd5a;
+  cursor: ew-resize;
+  z-index: 3;
+}
+
+/* دایره وسط خط */
+.slider-handle::before {
+  content: "⇆";
+  font-size: 18px;
+  color: #fff;
+  background: #766027;
+  border: 2px solid #eecd5a;
+  border-radius: 50%;
+  padding: 8px 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.before-after-container .before-img,
+.before-after-container .after-img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover;
+}
+
+ 
+
+
+
+
+/* ریسپانسیو در موبایل */
+@media (max-width: 768px) {
+  .doctor-box {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+
+    .info-box {
+      width: 100%;
+      max-width: 100%;
+      padding: 15px;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 250px;
+    }
+
+    .map-buttons a {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+ 
+    .map-buttons img{
+      size: 5px 5px;
+    }
+
+  /* --- تغییرات شماره 3 - نهایی: رفع بیرون‌زدگی و تنظیم iframe --- */
+  .info-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .info-box {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    box-sizing: border-box;
+  }
+
+  .map iframe {
+    width: 100%;
+    height: 300px; /* Restored height */
+    border-radius: 8px;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    .info-section {
+      padding: 20px;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    .info-box {
+      width: 100%;
+      max-width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 250px;
+    }
+
+    .map-buttons a {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+  }
+
+
+
+/* ===== فوتر طلایی زیبا ===== */
+.main-footer {
+  background: linear-gradient(135deg, #010101, #000000);
+  color: #AAAAAA;
+  padding: 60px 30px 30px;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-box {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-box h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #fff;
+  border-bottom: 1px solid #444; 
+  margin: 20px 0;
+}
+
+.footer-box ul {
+  list-style: disc;
+  
+}
+
+.footer-box ul li {
+  margin-bottom: 8px;
+}
+
+.footer-box ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-box ul li a:hover {
+  color: #f8c92d;
+}
+
+.gallery {
+  display: flex;
+  gap: 10px;
+}
+
+.gallery img {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* ===== انیمیشن fade-in-up ===== */
+/* همه المنت‌هایی که قراره انیمیشن بگیرن از اول نامرئی باشن */
+.animate {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* انیمیشن ظاهر شدن */
+.fade-in-up {
+  animation: fadeInUp 1.5s ease forwards; /* سرعت کمی بیشتر شد */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate.fade-in-up {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  /* عنوان‌های اصلی (مثل معرفی کلینیک، آدرس و...) */
+  .section-title {
+  
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  /* عنوان‌های فرعی مثل نام پزشک، باکس‌ها، ساعات کاری و... */
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  /* متن‌های داخل پاراگراف‌ها */
+  p {
+    font-size: 1rem;
+  }
+
+  
+}
+.about-clinic p {
+  text-align: justify;
+  text-justify: auto;
+  line-height: 1.8;
+}
+
+
+
+ /*menu */
+
+@media (max-width: 768px) {
+
+
+
+
+
+    
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: normal;
+    src: url(https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4gaVc.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/pacifico/v23/FwZY7-Qmy14u9lezJ-6H6Mw.ttf) format('truetype');
+  }
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  * {
+    box-sizing: border-box;
+    font-weight: 300;
+  }
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    color: inherit;
+    text-decoration: none;
+  }
+  .outer-menu {
+    top: 10vh;
+    right: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .outer-menu .checkbox-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+  }
+  .outer-menu .checkbox-toggle:checked + .hamburger > div {
+    transform: rotate(135deg);
+  }
+  .outer-menu .checkbox-toggle:checked + .hamburger > div:before,
+  .outer-menu .checkbox-toggle:checked + .hamburger > div:after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  .outer-menu .checkbox-toggle:checked + .hamburger > div:after {
+    opacity: 0;
+  }
+  .outer-menu .checkbox-toggle:checked ~ .menu {
+    pointer-events: auto;
+    visibility: visible;
+  }
+  .outer-menu .checkbox-toggle:checked ~ .menu > div {
+    transform: scale(1);
+    transition-duration: 0.75s;
+  }
+  .outer-menu .checkbox-toggle:checked ~ .menu > div > div {
+    opacity: 1;
+    transition: opacity 0.4s ease 0.4s;
+  }
+  .outer-menu .checkbox-toggle:hover + .hamburger {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .outer-menu .checkbox-toggle:checked:hover + .hamburger > div {
+    transform: rotate(225deg);
+  }
+  .outer-menu .hamburger {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    padding: 10px 5px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 0 0.12em 0.12em 0;
+    cursor: pointer;
+    transition: box-shadow 0.4s ease;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .outer-menu .hamburger > div {
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 4px;
+    background: #FEFEFE;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .outer-menu .hamburger > div:before,
+  .outer-menu .hamburger > div:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: inherit;
+    transition: all 0.4s ease;
+  }
+  .outer-menu .hamburger > div:after {
+    top: 10px;
+  }
+  .outer-menu .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    visibility: hidden;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    outline: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    overflow-y: auto; 
+    pointer-events: auto;
+  }
+  .outer-menu .menu > div {
+    width: 100%;
+    height: 104%;
+    color: #FEFEFE;
+    background: rgba(0, 0, 0, 0.60);
+    transition: all 0.4s ease;
+    flex: none;
+    transform: scale(0);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .outer-menu .menu > div > div {
+    text-align: center;
+    max-width: 150vw;
+    max-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    overflow-y: auto;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .outer-menu .menu > div > div > ul {
+    list-style: none;
+    padding: 0 1em;
+    margin: 0;
+    display: block;
+  }
+  .outer-menu .menu > div > div > ul > li {
+    padding: 0;
+    margin: 10px;
+    font-size: 30px;
+    display: flex;
+    direction: rtl;
+  }
+  .outer-menu .menu > div > div > ul > li > a {
+    position: relative;
+    display: inline;
+    cursor: pointer;
+    transition: color 0.4s ease;
+    font-size: 22px;
+    padding: 8px 50px;
+    display: block;
+  }
+  .outer-menu .menu > div > div > ul > ul {
+  display: inline-block;
+    direction: rtl;
+    margin-left: -30px;
+  }
+  .outer-menu .menu > div > div > ul > ul >li {
+    padding: 0;
+    font-size: 20px;
+    display: flex;
+    border-right: ridge;
+    direction: rtl;
+  }
+  
+  .outer-menu .menu > div > div > ul > ul> li > a {
+    position: relative;
+    display: inline;
+    cursor: pointer;
+    transition: color 0.4s ease;
+    font-size: 18px;
+    padding: 4px 25px;
+    line-height: 1.3em;
+    display: block;
+  }
+  
+  .outer-menu .menu > div > div > ul > li > a:hover {
+    color: #e5e5e5;
+  }
+  .outer-menu .menu > div > div > ul > li > a:hover:after {
+    width: 100%;
+  }
+  .outer-menu .menu > div > div > ul > li > a:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    bottom: -0.15em;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #e5e5e5;
+    transition: width 0.4s ease;
+  }
+  
+}
+@media (min-width: 768px) {
+    .outer-menu{
+        visibility: hidden;
+        position: relative;
+        height:0;
+    }
+}
+
+</style>
+</head>
+<body>
+
+  
+    <header class="navbar" id="navbar">
+        <div class="navbar-inner">
+          <!-- لوگو -->
+          <div class="logo">
+            <a href="#"><img src="logo.png" alt="لوگو"></a>
+          </div>
+      
+          <!-- عنوان -->
+          <h1 class="site-title">Dr.Rezaee Dental Center</h1>
+      
+          <!-- منوی دسکتاپ -->
+          <nav class="nav-desktop">
+            <a href="#">صفحه اصلی</a>
+            <a href="#">درباره ما</a>
+            <a href="#">خدمات</a>
+            <a href="#">پزشکان</a>
+            <a href="#">مقالات</a>
+            <a href="#">گالری</a>
+            <a href="#">تماس با ما</a>
+          </nav>
+      
+          <!-- دکمه منوی موبایل -->
+          <div class="menu menu--close2" id="menuBtn">
+            <div class="menu__icon">
+              <div class="menu__line menu__line--1"></div>
+              <div class="menu__line menu__line--2"></div>
+              <div class="menu__line menu__line--3"></div>
+            </div>
+          </div>
+
+          <script>
+            // انتخاب المنت منوی دوم
+            const menuClose2 = document.querySelector('.menu--close2');
+            
+            // اضافه کردن event listener
+            menuClose2.addEventListener('click', function() {
+              this.classList.toggle('open');
+            });
+            
+            </script>
+
+        <!-- منوی موبایل -->
+        <div class="mobile-menu" id="mobileMenu">
+          <ul>
+            <li><a href="#">صفحه اصلی</a></li>
+            <li><a href="#">درباره ما</a></li>
+            <li><a href="#">خدمات</a></li>
+            <li><a href="#">پزشکان</a></li>
+            <li><a href="#">مقالات</a></li>
+            <li><a href="#">گالری</a></li>
+            <li><a href="#">تماس با ما</a></li>
+          </ul>
+        </div>
+      
+        <!-- پوشش تار هنگام باز شدن منو -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+      </header>
+      <script>
+        const navbar = document.getElementById("navbar");
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuOverlay = document.getElementById("menuOverlay");
+        
+        // انیمیشن اسکرول (کوتاه شدن هدر)
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 20) navbar.classList.add("scrolled");
+          else navbar.classList.remove("scrolled");
+        });
+        
+        // باز و بسته شدن منوی موبایل
+        menuBtn.addEventListener("click", () => {
+          menuBtn.classList.toggle("active");
+          mobileMenu.classList.toggle("active");
+          menuOverlay.classList.toggle("active");
+          document.body.classList.toggle("noscroll");
+        });
+        
+        // بستن منو با کلیک بیرون
+        menuOverlay.addEventListener("click", () => {
+          menuBtn.classList.remove("active");
+          mobileMenu.classList.remove("active");
+          menuOverlay.classList.remove("active");
+          document.body.classList.remove("noscroll");
+        });
+        
+        // جلوگیری از اسکرول در حالت منو باز
+        const style = document.createElement('style');
+        style.innerHTML = `body.noscroll { overflow: hidden; }`;
+        document.head.appendChild(style);
+        </script>
+        
+  <section class="slider swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <picture>
+          <source media="(max-aspect-ratio: 4/3)" srcset="mobile-slider1.JPG">
+          <img src="desk-slider1.JPG" alt="اسلاید 1" class="slider-image">
+        </picture>
+    
+      </div>
+  
+      <div class="swiper-slide">
+        <picture>
+          <source media="(max-aspect-ratio: 4/3)" srcset="mobile-slider2.JPG">
+          <img src="desk-slider2.JPG" alt="اسلاید 2" class="slider-image">
+        </picture>
+       
+      </div>
+
+      <div class="swiper-slide">
+        <picture>
+          <source media="(max-aspect-ratio: 4/3)" srcset="mobile-slider3.JPG">
+          <img src="desk-slider3.JPG" alt="اسلاید 3" class="slider-image">
+        </picture>
+       
+      </div>
+
+    </div>
+  
+    <!-- فلش‌های ناوبری -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  
+    <!-- دایره‌های پیمایش (اختیاری) -->
+   
+  </section>
+  
+  
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 4000,  // هر 4 ثانیه
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    effect: 'fade',   // تغییر به محو شدن
+    fadeEffect: {
+      crossFade: true  // محو و ظاهر شدن همزمان
+    },
+    speed: 1000 // مدت زمان انیمیشن محو شدن (1 ثانیه)
+  });
+</script>
+  
+<style>
+/* آفلاین*/
+.swiper:not(.swiper-initialized) .swiper-wrapper { display: block; }
+.swiper:not(.swiper-initialized) .swiper-slide { display: none; }
+.swiper:not(.swiper-initialized) .swiper-slide:first-child { display: block; }
+</style>
+
+<script src="assets/swiper/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: { delay: 4000, disableOnInteraction: false },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      speed: 1000
+    });
+  });
+</script>
+
+<section class="intro-section">
+    <h2 class="intro-title">مرکز تخصصی دندانپزشکی دکتر رضایی</h2>
+    <div class="intro-text">
+      
+        دکتر محسن رضایی، متخصص دندانپزشکی زیبایی و ترمیمی در تهران، از چهره‌های برجسته این حوزه در ایران به شمار می‌آیند. ایشان با تجربه‌ای گسترده در انجام درمان‌های پیچیده ترمیمی، لمینیت و ونیر، به عنوان یکی از پیشگامان ارائه خدمات دندانپزشکی نوین شناخته می‌شوند. کسب رتبه برتر در بورد تخصصی کشور و انتخاب به عنوان دندانپزشک منتخب بنیاد ملی نخبگان، جایگاه علمی و حرفه‌ای ایشان را بیش از پیش نمایان ساخته است.
+      
+      <p>
+        به عنوان عضو هیئت علمی دانشگاه علوم پزشکی شهید بهشتی و عضو هیئت مدیره انجمن متخصصین ترمیمی ایران، دکتر رضایی نقشی فعال در توسعه دانش دندانپزشکی ایفا می‌کنند. ایشان با برگزاری بیش از ۲۵۰ دوره آموزشی تخصصی در زمینه زیبایی و ترمیمی، همواره در مسیر آموزش و تربیت نسل جدید دندانپزشکان کوشا بوده‌اند.
+      </p>
+      <p>
+        دکتر رضایی تعهدی ویژه نسبت به حفظ و درمان دندان‌های بیماران دارند و همواره تلاش کرده‌اند دندان‌هایی را که بسیاری از دندانپزشکان غیرقابل درمان تشخیص می‌دهند، با استفاده از متدها و تکنیک‌های منحصر به فرد خود ترمیم و احیا کنند.
+      </p>
+      <p>
+        در کلینیک امگا، خدمات تخصصی دندانپزشکی به صورت یکجا ارائه می‌شود که شامل موارد زیر است:
+        <br>
+        <br>- متخصص جراحی فک و صورت
+        <br>- متخصص جراحی لثه (periodentist)
+        <br>- متخصص درمان ریشه (endodentist)
+      </p>
+    </div>
+
+    <div class="more-btn">
+        <a href="#about">اطلاعات بیشتر...</a>
+      </div>
+
+      
+  </section>
+  
+
+
+  <section class="congress-section">
+    <div class="congress-text">
+      <h2>حضور دکتر رضایی به عنوان مدرس و سخنران در کنگره‌ها و همایش‌های داخلی و بین‌المللی</h2>
+      <p>
+        دکتر محسن رضایی با سال‌ها تجربه تخصصی در حوزه دندانپزشکی زیبایی و ترمیمی، 
+        همواره در کنگره‌ها و همایش‌های معتبر داخلی و خارجی به عنوان مدرس و سخنران حضور داشته‌اند.
+      </p>
+      <p>
+        ایشان با ارائه مقالات و سخنرانی‌های علمی، علاوه بر ارتقاء سطح علمی جامعه دندانپزشکی کشور، 
+        تجربیات خود را با همکاران به اشتراک گذاشته و همواره مورد استقبال قرار گرفته‌اند.
+      </p>
+      <p>
+        شرکت در این رویدادها نشان‌دهنده جایگاه برجسته علمی و تخصصی ایشان در سطح بین‌المللی است.
+      </p>
+    </div>
+  
+    <!-- اسلایدر -->
+    <div class="swiper congress-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="congress1.jpg" alt="کنگره 1"></div>
+        <div class="swiper-slide"><img src="congress2.jpg" alt="کنگره 2"></div>
+        <div class="swiper-slide"><img src="congress3.jpg" alt="کنگره 3"></div>
+      </div>
+      <!-- دکمه‌های پیمایش -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+  
+
+
+  
+  <section class="vip-section">
+    <div class="vip-header">
+      <img src="VIP.jpg" alt="کلینیک امگا">
+      <div class="vip-box">
+        <h2>تجربه‌ای لوکس در بخش VIP مطب دکتر رضایی</h2>
+        <p>
+          به دنبال لبخندی بی‌نظیر و خدمات دندانپزشکی خاص هستید؟  
+          در بخش VIP مطب دکتر رضایی، تجربه‌ای متفاوت و لوکس را برای شما رقم می‌زنیم.
+        </p>
+      </div>
+    </div>
+  
+    <div class="vip-features">
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; max-width: 1200px; margin: 40px auto 0; justify-content: center;">
+
+            <!-- هر کارت مزیت -->
+            <div style="flex: 1 1 250px; max-width: 300px; padding: 20px; background-color: #ffffff; border-radius: 15px; text-align: center; box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <i class="fas fa-clock" style="font-size: 40px; color: #d49d1e; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 18px; font-weight: bold; color: #333333; margin-bottom: 10px;">وقت دهی سریع و خارج نوبت</h3>
+                <p style="font-size: 16px; color: #666666; line-height: 1.6;">
+                    وقت‌دهی شما در سریع‌ترین زمان ممکن و به آسانی انجام می‌شود.
+                </p>
+            </div>
+    
+            <div style="flex: 1 1 250px; max-width: 300px; padding: 20px; background-color: #ffffff; border-radius: 15px; text-align: center; box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <i class="fas fa-smile-beam" style="font-size: 40px; color: #d49d1e; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 18px; font-weight: bold; color: #333333; margin-bottom: 10px;">طراحی لبخند با لمینیت‌های سرامیکی</h3>
+                <p style="font-size: 16px; color: #666666; line-height: 1.6;">
+                    تنها در یک هفته، لبخند شما به طرز شگفت‌انگیزی تغییر خواهد کرد.
+                </p>
+            </div>
+    
+            <div style="flex: 1 1 250px; max-width: 300px; padding: 20px; background-color: #ffffff; border-radius: 15px; text-align: center; box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <i class="fas fa-tooth" style="font-size: 40px; color: #d49d1e; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 18px; font-weight: bold; color: #333333; margin-bottom: 10px;">طراحی لبخند با کامپوزیت ونیر</h3>
+                <p style="font-size: 16px; color: #666666; line-height: 1.6;">
+                    بازسازی فوری دندان‌ها با کامپوزیت ونیر تنها در یک جلسه
+                </p>
+            </div>
+    
+            <div style="flex: 1 1 250px; max-width: 300px; padding: 20px; background-color: #ffffff; border-radius: 15px; text-align: center; box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <i class="fas fa-cube" style="font-size: 40px; color: #d49d1e; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 18px; font-weight: bold; color: #333333; margin-bottom: 10px;">بهترین و به روز ترین مواد</h3>
+                <p style="font-size: 16px; color: #666666; line-height: 1.6;">
+                    بهره‌گیری از مواد باکیفیت برای نتایج ماندگار و مطمئن.
+                </p>
+            </div>
+    
+            <div style="flex: 1 1 250px; max-width: 300px; padding: 20px; background-color: #ffffff; border-radius: 15px; text-align: center; box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <i class="fas fa-laptop" style="font-size: 40px; color: #d49d1e; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 18px; font-weight: bold; color: #333333; margin-bottom: 10px;">طراحی دیجیتال</h3>
+                <p style="font-size: 16px; color: #666666; line-height: 1.6;">
+                    طراحی دیجیتالی لبخند با دقت و کیفیت بالا.
+                </p>
+            </div>
+    
+            <div style="flex: 1 1 250px; max-width: 300px; padding: 20px; background-color: #ffffff; border-radius: 15px; text-align: center; box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <i class="fas fa-print" style="font-size: 40px; color: #d49d1e; margin-bottom: 15px;"></i>
+                <h3 style="font-size: 18px; font-weight: bold; color: #333333; margin-bottom: 10px;">بدون نیاز به قالب‌گیری سنتی</h3>
+                <p style="font-size: 16px; color: #666666; line-height: 1.6;">
+                    استفاده از اسکنرهای پیشرفته بدون نیاز به قالب‌گیری سنتی
+                </p>
+            </div>
+        </div>
+        
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="tel:09035362728" style="background-color: #d49d1e; color: #ffffff; padding: 15px 40px; text-decoration: none; border-radius: 30px; font-size: 18px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);">
+            وقت خود را رزرو کنید
+        </a>
+    </div>
+  </section>
+  
+  
+
+  <section class="services scroll-animate" id="services">
+    <div class="services-main">
+    <div class="service-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2HAvRMcwBrdxOPpTYiLCcpk7VNqTetxoCaA&s" alt="ترمیم">
+      <h3>ترمیم</h3>
+      <p>خدمات ترمیمی دندان با بهترین مواد و تجهیزات</p>
+      <a href="#">اطلاعات بیشتر</a>
+    </div>
+    <div class="service-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ-2dIMp-4lnmHiNXYQOKv509AJY1-rVLC8g&s" alt="درمان ریشه">
+      <h3>درمان ریشه</h3>
+      <p>درمان تخصصی عصب‌کشی</p>
+      <a href="#">اطلاعات بیشتر</a>
+    </div>
+    <div class="service-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrwsrGvIcL1UilnBcpO5dfy4I4_I-HlKrDjg&s" alt="ایمپلنت">
+      <h3>ایمپلنت</h3>
+      <p>جایگزینی دندان‌های از دست رفته</p>
+      <a href="#">اطلاعات بیشتر</a>
+    </div>
+    <div class="service-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTOJA7tEd1ruUSrcFEUT-moVq0OK76PS5xvg&s" alt="بلیچینگ">
+      <h3>لمینیت سرامیکی</h3>
+      <p>روکشی ظریف برای زیبایی</p>
+      <a href="#">اطلاعات بیشتر</a>
+    </div>
+
+  </div>
+
+    <br>
+    <div class="other-services scroll-animate">
+      <h3 class="section-subtitle">سایر خدمات</h3>
+   
+
+      <div class="services-other">
+
+        <div class="service-card">
+          <h4>ونیر کامپوزیت</h4>
+          <p>بهبود زیبایی دندان‌ها با پوشش کامپوزیت.</p>
+        </div>
+        <div class="service-card">
+          <h4>جراحی لثه</h4>
+          <p>درمان مشکلات لثه و بهبود سلامت دهان.</p>
+        </div>
+        <div class="service-card">
+          <h4>افزایش طول تاج</h4>
+          <p>ایجاد تناسب در نمای دندان و لثه.</p>
+        </div>
+        <div class="service-card">
+          <h4>بازسازی استخوان</h4>
+          <p>تقویت استخوان فک برای ایمپلنت یا درمان‌های دیگر.</p>
+        </div>
+        <div class="service-card">
+          <h4>لیفت سینوس</h4>
+          <p>افزایش ارتفاع استخوان فک بالا برای ایمپلنت.</p>
+        </div>
+        <div class="service-card">
+          <h4>بلیچینگ</h4>
+          <p>سفید کردن دندان‌ها به روشی ایمن و سریع.</p>
+        </div>
+        <div class="service-card">
+          <h4>پروتز و روکش</h4>
+          <p>بازگرداندن عملکرد و زیبایی دندان‌ها.</p>
+        </div>
+        <div class="service-card">
+          <h4>طراحی لبخند</h4>
+          <p>ایجاد لبخندی زیبا و متناسب با چهره.</p>
+        </div>
+        <div class="service-card">
+          <h4>ارتودنسی</h4>
+          <p>مرتب و منظم کردن دندان‌ها.</p>
+        </div>
+        <div class="service-card">
+          <h4>سیلانت</h4>
+          <p>شیاربندی به منظور پیشگیری از پوسیدگی دندان.</p>
+        </div>
+      </div>
+  
+    </div>
+    
+
+  </section>
+
+
+  <section class="instagram-section">
+    <div class="insta-header">
+      <h2>نتایج شگفت‌انگیز را در اینستاگرام مشاهده کنید</h2>
+      <p>به تجربیات ما اعتماد کنید</p>
+    </div>
+  
+    <div class="insta-image">
+      <img src="insta.jpg" alt="اینستاگرام کلینیک">
+    </div>
+  </section>
+  
+
+  <!--  اسلایدر نمونه کار-->
+  
+<div class="slider-wrap-sample">
+<div class="viewport-s">
+  <div class="track-sample" id="track-sample">
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="desk-slider1.JPG" alt=""></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate1.jpg" alt=""></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate2.jpg" alt=""></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate3.jpg" alt=""></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate4.jpg" alt=""></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate5.jpg" alt=""></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="mobile-slider2.JPG" alt="" loading="lazy"></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay muted loop loading="lazy"></video></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="congress1.jpg" alt="" loading="lazy"></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate6.jpg" alt="" loading="lazy"></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate7.jpg" alt="" loading="lazy"></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate8.jpg" alt="" loading="lazy"></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate9.jpg" alt="" loading="lazy"></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate10.jpg" alt="" loading="lazy"></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate11.jpg" alt="" loading="lazy"></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate12.jpg" alt="" loading="lazy"></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate13.jpg" alt="" loading="lazy"></div></div>
+    <div class="lg-slide-sample"><div class="lg-card-sample"><img src="gallery/laminate14.jpg" alt="" ></div></div>
+  </div>
+</div>
+
+<div class="lg-prev-sample" id="prevBtn-sample">❯</div>
+<div class="lg-next-sample" id="nextBtn-sample">❮</div>
+</div>
+
+
+<style>
+.slider-wrap-sample {
+  --gold: #c9a34e;
+  --bg-dark: #0a0a0a;
+  --card-bg: #111;
+  --gap: 20px;
+}
+
+/* کلیات */
+
+/* بخش اصلی اسلایدر */
+.slider-wrap-sample {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+    padding: 0;
+    font-family: "Vazirmatn", sans-serif;
+    background: var(--bg-dark);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* بخش نمایشی */
+.viewport-s {
+  overflow: hidden;
+  position: relative;
+}
+/* در بخش CSS جایگزین کن */
+.track-sample {
+  display: flex;
+  transition: transform 0.8s cubic-bezier(.25,.8,.25,1);
+  direction: ltr;
+}
+
+.lg-slide-sample {
+  flex: 0 0 33.333%; /* پیش‌فرض: 3 تا در دسکتاپ */
+  box-sizing: border-box;
+  padding: var(--gap);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .lg-slide-sample { flex: 0 0 50%; }  /* تبلت → 2 تا */
+}
+
+@media (max-width: 640px) {
+  .lg-slide-sample { flex: 0 0 100%; } /* موبایل → 1 تا */
+}
+
+
+/* کارت‌ها داخل هر اسلاید */
+.lg-card-sample {
+  background: var(--card-bg);
+  border: 1.5px solid rgba(201,163,78,0.6);
+  box-shadow: 0 0 20px rgba(201,163,78,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.lg-card-sample:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 40px rgba(201,163,78,0.25);
+}
+
+/* عکس و ویدیو داخل کارت */
+.lg-card-sample img,
+.lg-card-sample video {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* فلش‌های ناوبری */
+.lg-prev-sample, .lg-next-sample {
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(201,163,78,0.4);
+  color: var(--gold);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.lg-prev-sample { left: 0px; }
+.lg-next-sample { right: 0px; }
+
+.lg-prev-sample:hover, .lg-next-sample:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 30px rgb(201 163 78 / 25%);
+}
+
+/* در موبایل فلش‌ها همیشه دیده شوند */
+@media (max-width: 768px) {
+  .lg-prev-sample { left: 10px; }
+  .lg-next-sample { right: 10px; }
+}
+
+/* برای تست */
+.lg-card-sample video {
+  background: black;
+}
+</style>
+
+<script>
+const track = document.getElementById('track-sample');
+const prevBtn = document.getElementById('prevBtn-sample');
+const nextBtn = document.getElementById('nextBtn-sample');
+
+let originals = [];
+let slideWidth = 0;
+let visible = 3;
+let position = 0;
+let isTransitioning = false;
+
+
+
+// ----------------------------
+function getVisibleCount() {
+  if (window.innerWidth <= 640) return 1;
+  if (window.innerWidth <= 1024) return 2;
+  return 3;
+}
+
+// ----------------------------
+const TRANSITION = 'transform 0.8s cubic-bezier(.25,.8,.25,1)';
+
+// ----------------------------
+function buildClonesAndReset() {
+  // توقف کامل حرکت و حذف transition
+  track.style.transition = 'none';
+  isTransitioning = false;
+
+  // اطمینان از hint برای رندر روان
+  track.style.willChange = 'transform';
+
+  // حذف کلون‌ها (ایمن)
+  Array.from(track.querySelectorAll('.clone')).forEach(n => n.remove());
+
+  // شناسایی اسلایدهای اصلی (فقط اوریجینال‌ها)
+  originals = Array.from(track.querySelectorAll('.lg-slide-sample')).filter(
+    el => !el.classList.contains('clone')
+  );
+
+  visible = getVisibleCount();
+
+  // در صورتی که هیچ اسلایدی نباشد خروجی ایمن
+  if (originals.length === 0) return;
+
+  // اندازه هر اسلاید (به‌روز)
+  slideWidth = originals[0].getBoundingClientRect().width;
+
+  // ایجاد کلون‌های قبل
+  const lastSlice = originals.slice(-visible);
+  // *** بسیار مهم: برای نگه داشتن ترتیب درست، باید به صورت معکوس prepend کنیم ***
+  Array.from(lastSlice).reverse().forEach(n => {
+    const c = n.cloneNode(true);
+    c.classList.add('clone');
+    // prepend به صورت insertBefore(firstChild)
+    track.insertBefore(c, track.firstChild);
+  });
+
+  // ایجاد کلون‌های بعد (append به ترتیب معمولی)
+  const firstSlice = originals.slice(0, visible);
+  firstSlice.forEach(n => {
+    const c = n.cloneNode(true);
+    c.classList.add('clone');
+    track.appendChild(c);
+  });
+
+  // موقعیت شروع: بعد از کلون‌های قبل
+  position = visible;
+  track.style.transform = `translateX(-${position * slideWidth}px)`;
+
+  // یک فریم بعد transition را فعال کن تا از پرش جلوگیری شود
+  requestAnimationFrame(() => {
+    track.style.transition = TRANSITION;
+  });
+}
+
+
+// ----------------------------
+function updateTransform() {
+  track.style.transform = `translateX(-${position * slideWidth}px)`;
+}
+
+// ----------------------------
+function handleTransitionEnd() {
+  isTransitioning = false;
+  const originalsCount = originals.length;
+
+  // wrap به ابتدا
+  if (position >= originalsCount + visible) {
+    track.style.transition = 'none';
+    position = visible;
+    track.style.transform = `translateX(-${position * slideWidth}px)`;
+    // دو فریم صبر کن تا پرش دیده نشود
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        track.style.transition = TRANSITION;
+      });
+    });
+  }
+
+  // wrap به انتها
+  if (position < visible) {
+    track.style.transition = 'none';
+    // --- رفع پرش دسکتاپ و تبلت ---
+  
+    position = originalsCount + visible - 1;
+    track.style.transform = `translateX(-${position * slideWidth}px)`;
+    // چند فریم صبر کن و سپس visibility را بازگردان
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        track.style.transition = TRANSITION;
+
+      });
+    });
+  }
+}
+
+// ----------------------------
+function next() {
+  if (isTransitioning) return;
+  isTransitioning = true;
+  position++;
+  updateTransform();
+}
+
+function prev() {
+  if (isTransitioning) return;
+  isTransitioning = true;
+  position--;
+  updateTransform();
+}
+
+// ----------------------------
+nextBtn.addEventListener('click', next);
+prevBtn.addEventListener('click', prev);
+track.addEventListener('transitionend', handleTransitionEnd);
+
+// ----------------------------
+let resizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    buildClonesAndReset();
+  }, 150);
+});
+
+// ----------------------------
+buildClonesAndReset();
+
+</script>
+
+
+
+
+
+<!-- ✅ گالری با سه بخش: نمونه کارها، تصاویر کلینیک، آموزش -->
+<div class="section-title" >
+  <h2>گالری</h2>
+  <br>
+</div>
+<section class="gallery-section scroll-animate">
+
+    <!-- دکمه‌های دسته‌بندی -->
+    <div class="gallery-tabs">
+      <button class="tab-button active" onclick="showGallery('work')">نمونه کارها</button>
+      <button class="tab-button" onclick="showGallery('clinic')">تصاویر کلینیک</button>
+      <button class="tab-button" onclick="showGallery('education')">آموزش</button>
+    </div>
+  
+    <!-- گالری‌ها -->
+    <div class="gallery-content" id="gallery-work">
+        
+       <div class="BAC">
+        <h2>ترمیم</h2>
+        <div class="before-after-container">
+          
+            <img src="before1.JPG" class="before-img" alt="قبل">
+            <div class="after-wrapper">
+              <img src="after1.JPG" class="after-img" alt="بعد">
+            </div>
+            <div class="slider-handle"></div>
+          </div>
+        </div>
+
+        <div class="BAC">
+          <h2>طراحی لبخند</h2>
+          <div class="before-after-container">
+            
+            <img src="before2.JPG" class="before-img" alt="قبل">
+            <div class="after-wrapper">
+              <img src="after2.JPG" class="after-img" alt="بعد">
+            </div>
+            <div class="slider-handle"></div>
+          </div>  
+        </div>
+    </div>
+  
+    <div class="gallery-content" id="gallery-clinic" style="display: none;">
+      <img src="clinic1.jpg" alt="کلینیک 1">
+      <img src="clinic2.jpg" alt="کلینیک 2">
+    </div>
+  
+    <div class="gallery-content" id="gallery-education" style="display: none;">
+      <img src="edu1.jpg" alt="آموزش 1">
+      <img src="edu2.jpg" alt="آموزش 2">
+    </div>
+  </section>
+  
+  <script>
+    document.querySelectorAll(".before-after-container").forEach(e=>{const t=e.querySelector(".after-img"),n=e.querySelector(".slider-handle");let o=!1;const r=()=>{o=!0},c=()=>{o=!1},l=r=>{if(!o)return;const c=e.getBoundingClientRect();let l=(r.touches?r.touches[0].clientX:r.clientX)-c.left;l<0&&(l=0),l>c.width&&(l=c.width),t.style.clipPath=`inset(0 ${c.width-l}px 0 0)`,n.style.left=l+"px"};n.addEventListener("mousedown",r),window.addEventListener("mouseup",c),window.addEventListener("mousemove",l),n.addEventListener("touchstart",()=>o=!0),window.addEventListener("touchend",c),window.addEventListener("touchmove",l)});
+ 
+</script>
+
+  <script>
+    function showGallery(type) {
+      const sections = ['work', 'clinic', 'education'];
+      sections.forEach(id => {
+        document.getElementById('gallery-' + id).style.display = (id === type) ? 'flex' : 'none';
+      });
+    
+      const buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+    </script>
+
+
+
+  
+  <div class="section-title ">
+    <h2>کادر پزشکان</h2>
+  </div>
+    <section class="doctors-section scroll-animate">
+        <div class="doctor-box">
+          <div class="doctor-image-frame">
+            <img src="https://membersearch.irimc.org/member/personalphoto?id=691a0452-ca65-40f8-b21d-c4a4b232af8f" alt="دکتر رضایی">
+          </div>
+          <div class="doctor-details">
+            <h3>آقای دکتر محسن رضایی</h3>
+            <p class="doctor-specialty">متخصص ترمیمی</p>
+            <p>انجام ترمیم‌های پیچیده حتی برای دندان های غیرقابل ترمیم</p>
+          </div>
+        </div>
+      
+        <div class="doctor-box">
+          <div class="doctor-image-frame">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_aQeIZ948k2300xJh6lpydaCjyscullBlsw&s" alt="دکتر الهام علی‌اصغر">
+          </div>
+          <div class="doctor-details">
+            <h3>خانم دکتر الهام علی‌اصغر</h3>
+            <p class="doctor-specialty">فلوشیپ لیزر</p>
+            <p> ترمیم و زیبایی</p>
+          </div>
+        </div>
+      </section>
+      
+
+  <div class="section-title">
+    <h2>سوالات متداول</h2>
+  <br>
+  </div>
+
+ 
+  <section class="faq-section scroll-animate">
+  
+    <div class="faq-container">
+      <!-- سوال ۱ -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>چگونه وقت بگیرم؟</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>برای دریافت نوبت می‌توانید با شماره مطب تماس بگیرید یا از طریق واتساپ پیام ارسال کنید.</p>
+        </div>
+      </div>
+  
+      <!-- سوال ۲ -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>آیا خدمات زیبایی هم انجام می‌دهید؟</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>بله، تمامی خدمات زیبایی از جمله طراحی لبخند و لمینت ارائه می‌شود.</p>
+        </div>
+      </div>
+  
+      <!-- سوالات اضافی (پنهان شده در ابتدا) -->
+      <!-- 3سوال  -->
+      <div class="faq-extra hidden">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>هزینه درمان‌ها چگونه محاسبه می‌شود؟</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>هزینه بر اساس نوع درمان و شرایط بیمار محاسبه می‌شود و پس از معاینه اعلام خواهد شد.</p>
+          </div>
+        </div>
+        <!-- 4سوال  -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>آیا کلینیک مجهز به تجهیزات مدرن است؟</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>بله، کلینیک امگا از تجهیزات مدرن و به‌روز برای ارائه خدمات استفاده می‌کند.</p>
+          </div>
+        </div>
+        <!-- 5سوال  -->
+        <div class="faq-item">
+            <div class="faq-question">
+            <span>آیا از روش های طراحی لبخند استفاده میشود ؟</span>
+            <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+            <p>بله، کلینیک امگا از اکنیک های طراحی لبخند استفاده می‌کند.</p>
+            </div>
+        </div>
+        </div>
+
+      <!-- دکمه نمایش همه -->
+      <div class="faq-toggle">
+        <button id="toggleFaq">نمایش همه</button>
+      </div>
+    </div>
+  </section>
+
+  <style> 
+  .faq-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+  
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* باکس سوال */
+  .faq-question {
+    background: #d4af37; /* طلایی */
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  .faq-question:hover {
+    background: #c09c2f;
+  }
+  .faq-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* باکس جواب */
+  .faq-answer {
+    background: rgba(212, 175, 55, 0.15); /* طلایی ملایم‌تر */
+    padding: 15px 20px;
+    border-radius: 0 0 12px 12px;
+    margin-top: -10px;
+    display: none;
+    animation: fadeIn 0.4s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* سوالات اضافی */
+  .faq-extra.hidden {
+    display: none;
+  }
+  
+  /* دکمه نمایش همه */
+  .faq-toggle {
+    text-align: right;
+  }
+  .faq-toggle button {
+    background: #fff;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .faq-toggle button:hover {
+    background: #d4af37;
+    color: #fff;
+  }
+  .faq-extra .faq-question{
+    margin-bottom: 10px;
+  }
+</style>
+
+<script>
+    document.querySelectorAll(".faq-question").forEach(question => {
+      question.addEventListener("click", () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector(".faq-icon");
+    
+        // بستن همه جواب‌ها به جز انتخاب‌شده
+        document.querySelectorAll(".faq-answer").forEach(ans => {
+          if (ans !== answer) ans.style.display = "none";
+        });
+        document.querySelectorAll(".faq-icon").forEach(ic => {
+          if (ic !== icon) ic.textContent = "+";
+        });
+    
+        // باز و بسته کردن همین سوال
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+          icon.textContent = "+";
+        } else {
+          answer.style.display = "block";
+          icon.textContent = "−";
+        }
+      });
+    });
+    
+    // نمایش همه / پنهان کردن
+    const toggleBtn = document.getElementById("toggleFaq");
+    const extraFaq = document.querySelector(".faq-extra");
+    
+    toggleBtn.addEventListener("click", () => {
+      if (extraFaq.classList.contains("hidden")) {
+        extraFaq.classList.remove("hidden");
+        toggleBtn.textContent = "پنهان کردن";
+      } else {
+        extraFaq.classList.add("hidden");
+        toggleBtn.textContent = "نمایش همه";
+      }
+    });
+    </script>
+    
+
+
+
+  <div class="mobile-bottom-bar">
+  <div class="right-btn">
+          <a href="https://wa.me/989012345678" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> مشاوره رایگان
+          </a>
+          <button onclick="openModal('contactModal')" class="sub-btn" style="padding-right: 20px;">--راه‌های ارتباطی--</button>
+        </div>
+
+    
+    <!-- دکمه تماس متفاوت (دایره‌ای) -->
+    <a href="tel:02122800319" class="call-btn" style="margin-right: 4%;">
+      <i class="fas fa-phone"></i>
+    </a>
+    
+    <button onclick="openModal('mapModal')"><i class="fas fa-map-marker-alt"></i><br>مسیریابی</button>
+    <button onclick="openModal('servicesModal')"><i class="fas fa-tooth"></i><br>خدمات</button>
+  </div>
+  
+  <!-- ✅ مودال خدمات -->
+  <div id="servicesModal" class="custom-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span onclick="closeModal('servicesModal')" class="close-btn">✖ بستن</span>
+      </div>
+      <button>ترمیم</button>
+      <button>زیبایی</button>
+      <button>عصب کشی</button>
+    </div>
+  </div>
+  
+  <!-- ✅ مودال ارتباط -->
+  <div id="contactModal" class="custom-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span onclick="closeModal('contactModal')" class="close-btn">✖ بستن</span>
+      </div>
+      <button>خظ اول مطب</button>
+      <button>خظ دوم مطب</button>
+      <button>همراه منشی</button>
+      <button>واتساپ</button>
+      <button>اینستاگرام</button>
+      <button>تلگرام</button>
+      <button>یوتوب</button>
+    </div>
+  </div>
+  
+  <!-- ✅ مودال مسیریابی -->
+  <div id="mapModal" class="custom-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span onclick="closeModal('mapModal')" class="close-btn">✖ بستن</span>
+      </div>
+      <button>گوگل</button>
+      <button>بلد</button>
+      <button>نشان</button>
+    </div>
+  </div>
+  
+  <!-- ✅ مودال گالری -->
+  <div id="galleryModal" class="custom-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span onclick="closeModal('galleryModal')" class="close-btn">✖ بستن</span>
+      </div>
+      <button>نمونه کارها</button>
+      <button>تجهیزات</button>
+      <button>آموزش</button>
+    </div>
+  </div>
+  
+  <style>
+  /* ==== نوار پایینی موبایل ==== */
+  .mobile-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0; right: 0;
+    height: 60px;
+    background: #f4d95f;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    z-index: 9;
+  }
+  
+  .mobile-bottom-bar button {
+    background: none;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+  }
+  
+  .mobile-bottom-bar button i {
+    font-size: 20px;
+    margin-bottom: -13px;
+  }
+
+  .right-btn {
+        color: #f4d95f;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+      .whatsapp-btn {
+
+        color: #f4d95f;
+        padding: 8px 14px;
+        border-radius: 20px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+        margin-bottom: 4px;
+      }
+      .whatsapp-btn i {
+        font-size: 18px;
+      }
+      .sub-btn {
+        background: none;
+        border: none;
+        font-size: 12px;
+        color: #333;
+        cursor: pointer;
+      }
+      
+  
+  /* دکمه تماس دایره‌ای */
+  .call-btn {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #f4d95f, #c08c01);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    margin-top: -30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-decoration: none;
+  }
+  
+  /* ==== مودال ==== */
+  .custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+  }
+  
+  .modal-content button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border: none;
+    background: linear-gradient(135deg, #f4d95f, #c08c01);
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .close-btn {
+    cursor: pointer;
+    font-size: 16px;
+    color: #c00;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  /* فقط در موبایل نمایش داده شود */
+  @media (min-width: 769px) {
+    .mobile-bottom-bar { display: none; }
+  }
+  </style>
+  
+  <script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+  </script>
+  
+
+
+
+<footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-box animate">
+        <h3>درباره کلینیک امگا</h3>
+        
+        <div class="about-clinic">
+            <p>
+              کلینیک تخصصی امگا با بهره‌گیری از پیشرفته‌ترین تجهیزات دندان‌پزشکی و همکاری تیمی مجرب از متخصصان در حوزه‌های مختلف دهان، دندان و زیبایی، محیطی آرام و حرفه‌ای را برای بیماران فراهم کرده است. هدف ما ارائه خدمات با کیفیت بالا، بر پایه احترام، دقت و آرامش برای مراجعین گرامی است.
+            </p>
+          </div>
+          
+      </div>
+      <div class="footer-box animate">
+        <h3>دسترسی سریع</h3>
+       
+        <ul>
+          <li><a href="#">صفحه اصلی</a></li>
+          <li><a href="#">خدمات</a></li>
+          <li><a href="#">پزشکان</a></li>
+          <li><a href="#">گالری</a></li>
+          <li><a href="#">تماس با ما</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-box animate">
+        <h3>ارتباط با ما</h3>
+        
+        <p>تلفن‌های مطب و همراه منشی:</p>
+        <p><a href="tel:02122800314" style="color:#fff">021-22800314</a></p>
+        <p><a href="tel:02122800319" style="color:#fff">021-22800319</a></p>
+        <p><a href="tel:09121111111" style="color:#fff">0912-1111111</a></p>
+        <p>آدرس: تهران، بعد از چهارراه قرمانیه، کامرانیه شمالی، ابتدای لواسانی غربی، روبه‌روی بانک گردشگری، ساختمان آریا، پلاک ۱۰، طبقه سوم، دندانپزشکی امگا</p>
+        <p>ایمیل: info@omegadental.com</p>
+        
+      </div>
+      <div class="footer-box animate">
+        <h3>مسیریابی</h3>
+        <div class="map">
+            <iframe src="https://maps.google.com/maps?q=35.8045,51.4643&hl=fa&z=14&amp;output=embed"></iframe>
+            <div class="map-buttons">
+              مسیریابی با:
+              <a href="https://maps.google.com/?q=35.801309,51.464927" target="_blank">
+                <img src="googlemap.webp" alt="Google Maps Logo"> گوگل
+              </a>
+              <a href="https://balad.ir/p/5u60U" target="_blank"> <img src="balad.webp" alt="Balad Logo">  بلد</a>
+                <a href="https://neshan.org/maps/@35.801309,51.464927,15z" target="_blank"> <img src="neshan.webp" alt="Neshan Logo"> نشان</a>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="footer-box animate">
+            <h3>ساعات کاری</h3>
+            
+            <p>شنبه: متخصص ترمیمی </p>
+            <p>یکشنبه: متخصص ایمپلنت</p>
+            <p>دوشنبه: متخصص ترمیمی</p>
+            <p>سه‌شنبه: متخصص ترمیمی</p>
+            <p>چهارشنبه: متخصص درمان ریشه</p>
+            <p>پنج‌شنبه: متخصص ترمیمی</p>
+            </div>
+            
+        </div>
+
+    </div>
+
+      
+    <div class="footer-bottom">
+        <hr style="border-style: dotted; border-width:1px 0px 0px 0px">
+      <p>© تمامی حقوق این سایت برای کلینیک امگا محفوظ است.</p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const elements = document.querySelectorAll(".animate");
+    
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // برای هر ستون تأخیر جداگانه بگذاریم
+            entry.target.style.animationDelay = `${[...elements].indexOf(entry.target) * 0.3}s`;
+            entry.target.classList.add("fade-in-up");
+            observer.unobserve(entry.target); // فقط یکبار اجرا بشه
+          }
+        });
+      }, { threshold: 0.1 });
+    
+      elements.forEach(el => observer.observe(el));
+    });
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll(".scroll-animate");
+    
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target); // فقط یکبار اجرا بشه
+          }
+        });
+      }, { threshold: 0.1 });
+    
+      sections.forEach(sec => observer.observe(sec));
+    });
+    </script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const footer = document.querySelector(".main-footer");
+          const bar = document.querySelector(".mobile-bottom-bar");
+          if (footer && bar) {
+            footer.style.paddingBottom = bar.offsetHeight + 20 + "px";
+          }
+        });
+        </script>
+        
+
+
+
+
+        
+<div id="fb-root"></div>
+
+    
+                <div class="wpfm-floating-wh-wrapper ">
+             <div class="wpfm-menu-wrapper wpfm-template-4" template-type="template-4" menu-id="1" data-scroll-call="0" data-scroll-value="100" data-pos-offset-var="0">
+    <nav id="wpfm-floating-menu-nav" class="wpfm-menu-nav wpfm wpfm-position-left">
+                <ul class="wpfm-nav wpfm-nav-show-hide">
+                                    <li class="  " data-li-key="1">
+                            <a title="" class="wpfm-menu-link" href="https://www.instagram.com/doctor.khosravani/?hl=fa" rel=" ">
+                                                                    <span class="wpfm-icon-block ">
+                                                                                          <i class="fab fa-instagram" aria-hidden="true"></i>
+                                                                                </span>
+                                    <span class="wpfm-menu-name-tooltip-wrap">
+                                        <span class="name wpfm-menu-name">
+                                                                                            اینستاگرام ما                                                                                                                                </span>
+                                    </span>
+                                              
+                            </a>    
+                                                         
+                        </li>
+                                                <li class="  " data-li-key="2">
+                            <a title="" class="wpfm-menu-link" href="tel:02126878600" rel=" ">
+                                                                    <span class="wpfm-icon-block ">
+                                                                                          <i class="fa fa-phone" aria-hidden="true"></i>
+                                                                                </span>
+                                    <span class="wpfm-menu-name-tooltip-wrap">
+                                        <span class="name wpfm-menu-name">
+                                                                                            تماس با مطب                                                                                                                                </span>
+                                    </span>
+                                              
+                            </a>    
+                                                         
+                        </li>
+                                                <li class="  " data-li-key="3">
+                            <a title="" class="wpfm-menu-link" href="https://maps.app.goo.gl/4DH4zxKVQGnMR7cB8" rel=" ">
+                                                                    <span class="wpfm-icon-block ">
+                                                                                          <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                                                                                </span>
+                                    <span class="wpfm-menu-name-tooltip-wrap">
+                                        <span class="name wpfm-menu-name">
+                                                                                            آدرس مطب                                                                                                                                </span>
+                                    </span>
+                                              
+                            </a>    
+                                                         
+                        </li>
+                          
+        </ul>             
+    </nav>
+    <div class="wpfm-menu-additional-content-wrap">
+            </div>
+    <div class="wpfm-menu-additional-content-overlay" id="wpfm-menu-additional-content-overlay-1"></div>
+</div>
+    </div>
+    
+    <style>
+      .nav# wpfm-floating-menu-nav{
+        z-index:9999;
+      }
+      .wpfm-menu-nav.wpfm-position-left ul, .wpfm-position-top-left ul, .wpfm-position-bottom-left ul{
+        left:0;
+      }
+      .wpfm-position-left.wpfm-menu-nav ul, .wpfm-position-right.wpfm-menu-nav ul{
+        position:fixed;
+        top:50%;
+        -webkit-transform:translateY(-50%);
+      }
+      .wpfm-menu-wrapper ul{
+        -webkit-margin-before:0em;
+        -webkit-margin-after:0em;
+        -webkit-margin-start:0;
+        -webkit-margin-end:0;
+        -webkit-padding-start:0;
+      }
+      .wpfm-menu-nav ul{
+        margin:0;
+        list-style:none;
+        z-index: 99999;
+      }
+      .wpfm-template-1 ul.wpfm-nav li, .wpfm-template-2 ul.wpfm-nav li, .wpfm-template-3 ul.wpfm-nav li, .wpfm-template-4 ul.wpfm-nav li{
+        margin-bottom:2px;
+        height:40px;
+        outline:0;
+        position: relative;
+      }
+      .wpfm-template-4 ul li{
+        display: block;
+      }
+      .wpfm-template-1 ul li a, .wpfm-template-2 ul li a, .wpfm-template-3 ul li a, .wpfm-template-4 ul li a{
+        z-index:99;
+      }
+
+      .wpfm-template-4 ul li a{
+        position: relative;
+        display: inline-block;
+        height: 40px;
+        transition:none
+      }
+      .wpfm-template-4 ul li .wpfm-icon-block{
+        position:absolute;
+        top:0;
+        width: 40px;
+        line-height: 40px;
+        background:rgba(0,0,0,.6);
+        display: block;
+        text-align:center;
+        transition:all 0.5s ease;
+        -webkit-transition:all 0.5s ease;
+        color:#fff;
+        height: 40px;
+        z-index: 9;
+      }
+      .wpfm-template-4 ul li .wpfm-icon-block i{
+        line-height:40px;
+        width:100%;
+        font-size: 20px;
+      }
+
+
+
+
+
+     
+      #top a:where(:not(.wp-element-button)){
+        text-decoration:none;
+      }
+      .wpfm-template-4 .wpfm-position-left ul li a, .wpfm-template-4 .wpfm-position-top-left ul li a, .wpfm-template-4 .wpfm-position-bottom-left ul li a{
+        left: -100%;
+        transform:translateX(40px) translateZ(0);
+        -webkit-transform: translateX(40px) translateZ(0);
+        -moz-transform:translateX(40px) translateZ(0);
+        -ms-transform:translateX(40px) translateZ(0);
+        -o-transform:translateX(40px) translateZ(0);
+        width:100%;
+     }
+
+     /* بخش کلی */
+.wpfm-menu-nav ul li {
+  position: relative;
+}
+
+/* متن مخفی در حالت عادی */
+.wpfm-menu-name-tooltip-wrap {
+  position: absolute;
+  left: 40px; /* فاصله از آیکون */
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 9999; /* مهم: همیشه بالاتر از دکمه */
+}
+
+/* نمایش متن هنگام hover */
+.wpfm-menu-link:hover .wpfm-menu-name-tooltip-wrap {
+  opacity: 1;
+  left: 30px; /* کمی جلوتر برای انیمیشن */
+}
+
+
+.wpfm-menu-name-tooltip-wrap {
+    position: absolute;
+    left: 45px; /* فاصله نهایی از آیکون */
+    top: 50%;
+    transform: translateY(-50%) translateX(-20px); /* اولش 20px عقب‌تر باشه */
+    opacity: 0;
+    transition: all 0.4s ease; /* حرکت نرم */
+    white-space: nowrap;
+  }
+  
+  .wpfm-icon-block:hover + .wpfm-menu-name-tooltip-wrap {
+    transform: translateY(-50%) translateX(0); /* بره سرجاش */
+    opacity: 1;
+  }
+  
+
+
+
+
+/* مخفی بودن پیش‌فرض متن */
+.wpfm-menu-name-tooltip-wrap {
+  opacity: 0;
+  transition: opacity 0.5s ease, color 1s ease;
+}
+
+/* وقتی اکتیو میشه */
+.wpfm-tooltip-active {
+  opacity: 1 !important;
+  color: red !important; /* اول قرمز */
+  animation: colorChange 2s forwards;
+}
+
+/* تغییر رنگ از قرمز به رنگ اصلی (مثلا سفید) */
+@keyframes colorChange {
+  0% { color: red; }
+  20% { color: red; }   /* یک ثانیه اول قرمز بمونه */
+  100% { color: white; } /* بعدش سفید یا رنگ دلخواه */
+}
+
+
+
+    </style>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const targetSection = document.querySelector(".instagram-section");
+      const tooltip = document.querySelector(".wpfm-menu-name-tooltip-wrap");
+    
+      if (targetSection && tooltip) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tooltip.classList.add("wpfm-tooltip-active");
+              setTimeout(() => {
+                tooltip.classList.remove("wpfm-tooltip-active");
+              }, 4000); // بعد از 6 ثانیه حذف بشه
+            }
+          });
+        }, { threshold: 0.3 }); // وقتی 30٪ سکشن دیده بشه اجرا کنه
+    
+        observer.observe(targetSection);
+      }
+    });
+    tooltip.classList.add("active", "highlight");
+setTimeout(() => {
+  tooltip.classList.remove("highlight"); // بعد ۱ ثانیه از قرمز به رنگ عادی
+}, 1000);
+
+    </script>
+    
+
+
+
+<style id="ht-ctc-entry-animations">.ht_ctc_entry_animation{animation-duration:1s;animation-fill-mode:both;animation-delay:0s;animation-iteration-count:1;}
+    @keyframes center{from{transform:scale(0);}to{transform:scale(1);}}.ht_ctc_an_entry_center{animation: center .25s;}
+    </style>
+<style id="ht-ctc-animations">.ht_ctc_animation{animation-duration:1s;animation-fill-mode:both;animation-delay:0s;animation-iteration-count:1;}
+    @keyframes bounce{from,20%,53%,to{animation-timing-function:cubic-bezier(0.215,0.61,0.355,1);transform:translate3d(0,0,0)}40%,43%{animation-timing-function:cubic-bezier(0.755,0.05,0.855,0.06);transform:translate3d(0,-30px,0) scaleY(1.1)}70%{animation-timing-function:cubic-bezier(0.755,0.05,0.855,0.06);transform:translate3d(0,-15px,0) scaleY(1.05)}80%{transition-timing-function:cubic-bezier(0.215,0.61,0.355,1);transform:translate3d(0,0,0) scaleY(0.95)}90%{transform:translate3d(0,-4px,0) scaleY(1.02)}}.ht_ctc_an_bounce{animation-name:bounce;transform-origin:center bottom}
+</style>
+
+    <div class="ht-ctc ht-ctc-chat ctc-analytics ctc_wp_desktop style-4 ht_ctc_entry_animation ht_ctc_an_entry_center ht_ctc_animation ht_ctc_an_bounce" id="ht-ctc-chat" style="position: fixed; bottom: 25px; right: 8%; cursor: pointer; z-index: 59;">
+        <style id="ht_ctc_rtl">.g_header_badge_online {left: 0;right: unset;}</style>
+        <div style="position: relative; bottom: 18px; cursor: auto; z-index:9;" class="ht_ctc_greetings ctc_m_full_width">
+            <div class="ht_ctc_chat_greetings_box  template-greetings-1  ctc_greetings_next" style="display: none; position: absolute; right: 0px;bottom: 0px; min-width: 330px; max-width: 420px; ">
+
+            <div class="ht_ctc_chat_greetings_box_layout" style="max-height: 84vh; overflow-y:auto;    box-shadow: 0px 1px 9px 0px rgba(0,0,0,.14); border-radius:8px;">
+
+            <span style="position:absolute; top:0; left:0; cursor:pointer; padding:5px; margin:4px; border-radius:50%; background-color: unset !important; z-index: 9999; line-height: 1;" class="ctc_greetings_close_btn">
+                <svg style="color:lightgray; background-color: unset !important; border-radius:50%;" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                </svg>
+            </span>
+
+            <div class="ctc_greetings_template">
+                <style>
+            .ctc_g_content_for_bg_image:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://drgoshaderoo.com/wp-content/plugins/click-to-chat-for-whatsapp/./new/inc/assets/img/wa_bg.png');
+            opacity: 0.07;
+            }
+            :root {
+            --ctc_g_message_box_bg_color: #ede1bd;
+            }
+            .template-greetings-1 .ctc_g_message_box {
+            position: relative;
+            max-width: calc(100% - 30px);
+            background-color: var(--ctc_g_message_box_bg_color);
+            }
+            .template-greetings-1 .ctc_g_message_box {
+            box-shadow: 0 1px 0.5px 0 rgba(0,0,0,.14);
+            }
+            .template-greetings-1 .ctc_g_message_box:before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            height: 18px;
+            width: 9px;
+            background-color: var(--ctc_g_message_box_bg_color);
+            }
+            .ctc_g_message_box {
+            border-radius: 7px 0px 7px 7px;
+            }
+            .ctc_g_message_box:before {
+            left: 100%;
+            clip-path: polygon(0% 0%, 0% 50%, 100% 0%);
+            -webkit-clip-path: polygon(0% 0%, 0% 50%, 100% 0%);
+            }
+            </style>
+            <div class="ctc_g_heading" style="display: flex; align-items: center; padding: 12px 25px 12px 25px;background-color:#edb100;line-height:1.1;">
+            <div class="greetings_header_image" style="border-radius:50%;height:50px; width:50px;margin-left:9px;">
+                    <img style="display:inline-block; border-radius:50%; height:50px; width:50px;" src="https://drgoshaderoo.com/wp-content/uploads/2023/05/fgherhg.webp" alt="fgherhg">
+                        <span class="for_greetings_header_image_badge g_header_badge_online" style="border: 2px solid rgb(237, 177, 0); background-color: rgb(6, 227, 118);"></span>
+                    </div>
+            <div class="ctc_g_header_content">
+            <p><span style="color: #ffffff;font-size: 17px;font-weight: 500">مرکز تخصصی دندانپزشکی دکتر عزیز گشاده رو در الهیه</span></p>
+            <p>&nbsp;</p>
+            </div>
+            </div>
+
+            <div class="ctc_g_content" style="background-color:#ece5dd;padding: 18px 18px 98px 24px; position:relative;">
+            <div class="ctc_g_content_for_bg_image">
+            <div class="ctc_g_message_box ctc_g_message_box_width" style="margin: 8px 5px;padding:6px 8px 8px 9px;background-color:#ede1bd;"><p style="text-align: right"><span style="font-size: 13px"><strong>به مرکز تخصصی دکتر عزیز گشاده رو خوش آمدید.</strong></span></p>
+            <p style="text-align: right"><span style="font-size: 14px">برای مشاوره فوری پیام خود را ارسال کنید</span></p>
+            <p>&nbsp;</p>
+            </div>
+            </div>
+            </div>
+
+            <div class="ctc_g_sentbutton" style="text-align:center; padding: 11px 25px 9px 25px; cursor:pointer;background-color:#ffffff;">
+            <div class="ht_ctc_chat_greetings_box_link ctc-analytics">
+            <style id="ht-ctc-s7_1">
+            .ht-ctc .g_ctc_s_7_1:hover{background-color:#00d34d !important;}.ht-ctc .g_ctc_s_7_1:hover .g_ctc_s_7_1_cta{color:#f4f4f4 !important;}.ht-ctc .g_ctc_s_7_1:hover svg g path{fill:#f4f4f4 !important;}</style>
+
+            <div class="g_ctc_s_7_1 ctc-analytics" style="display:flex;justify-content:center;align-items:center;flex-direction:row-reverse; padding:5px; background-color:#25D366;border-radius:25px; cursor: pointer;">
+            <p class="g_ctc_s_7_1_cta ctc-analytics ctc_cta ht-ctc-cta " style="; padding:1px 0px; color:#ffffff; border-radius:10px; margin:0 10px; order:1; ">WhatsApp Us</p>
+            <div class="g_ctc_s_7_icon_padding ctc-analytics " style="">
+            <svg style="pointer-events:none; display:block; height:20px; width:20px;" height="20px" version="1.1" viewBox="0 0 509 512" width="20px">
+            <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
+            <path style="fill: #ffffff;" d="M259.253137,0.00180389396 C121.502859,0.00180389396 9.83730687,111.662896 9.83730687,249.413175 C9.83730687,296.530232 22.9142299,340.597122 45.6254897,378.191325 L0.613226597,512.001804 L138.700183,467.787757 C174.430395,487.549184 215.522926,498.811168 259.253137,498.811168 C396.994498,498.811168 508.660049,387.154535 508.660049,249.415405 C508.662279,111.662896 396.996727,0.00180389396 259.253137,0.00180389396 L259.253137,0.00180389396 Z M259.253137,459.089875 C216.65782,459.089875 176.998957,446.313956 143.886359,424.41206 L63.3044195,450.21808 L89.4939401,372.345171 C64.3924908,337.776609 49.5608297,295.299463 49.5608297,249.406486 C49.5608297,133.783298 143.627719,39.7186378 259.253137,39.7186378 C374.871867,39.7186378 468.940986,133.783298 468.940986,249.406486 C468.940986,365.025215 374.874096,459.089875 259.253137,459.089875 Z M200.755924,146.247066 C196.715791,136.510165 193.62103,136.180176 187.380228,135.883632 C185.239759,135.781068 182.918689,135.682963 180.379113,135.682963 C172.338979,135.682963 164.002301,138.050856 158.97889,143.19021 C152.865178,149.44439 137.578667,164.09322 137.578667,194.171258 C137.578667,224.253755 159.487251,253.321759 162.539648,257.402027 C165.600963,261.477835 205.268745,324.111057 266.985579,349.682963 C315.157262,369.636141 329.460495,367.859106 340.450462,365.455539 C356.441543,361.9639 376.521811,350.186865 381.616571,335.917077 C386.711331,321.63837 386.711331,309.399797 385.184018,306.857991 C383.654475,304.305037 379.578667,302.782183 373.464955,299.716408 C367.351242,296.659552 337.288812,281.870254 331.68569,279.83458 C326.080339,277.796676 320.898622,278.418749 316.5887,284.378615 C310.639982,292.612729 304.918689,301.074268 300.180674,306.09099 C296.46161,310.02856 290.477218,310.577055 285.331175,308.389764 C278.564174,305.506821 259.516237,298.869139 236.160607,278.048627 C217.988923,261.847958 205.716906,241.83458 202.149458,235.711949 C198.582011,229.598236 201.835077,225.948292 204.584241,222.621648 C207.719135,218.824546 210.610997,216.097679 213.667853,212.532462 C216.724709,208.960555 218.432625,207.05866 220.470529,202.973933 C222.508433,198.898125 221.137195,194.690767 219.607652,191.629452 C218.07588,188.568136 205.835077,158.494558 200.755924,146.247066 Z" fill="#ffffff" id="htwaicon-greetings_chat"></path>
+            </g>
+            </svg>    </div>
+            </div>    </div>
+            </div>
+
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="ht_ctc_style ht_ctc_chat_style">
+            <div class="ctc_chip ctc-analytics ctc_s_4 ctc_nb" onclick="openWaModal()" onclick="document.getElementById('waModal').style.display='flex'" style="display:flex;justify-content: center;align-items: center;background-color:#fff;color:#000;padding:0 10px;border-radius:25px;font-size:13px;line-height:32px;flex-direction:row-reverse; " data-nb_top="-10px" data-nb_right="-10px">
+            <span class="s4_img" style="margin:0 8px 0 -12px;;order:0;"><svg style="pointer-events:none; display: block; height:32px; width:32px;" width="32px" height="32px" viewBox="0 0 1219.547 1225.016">
+            <path style="fill: #E0E0E0;" fill="#E0E0E0" d="M1041.858 178.02C927.206 63.289 774.753.07 612.325 0 277.617 0 5.232 272.298 5.098 606.991c-.039 106.986 27.915 211.42 81.048 303.476L0 1225.016l321.898-84.406c88.689 48.368 188.547 73.855 290.166 73.896h.258.003c334.654 0 607.08-272.346 607.222-607.023.056-162.208-63.052-314.724-177.689-429.463zm-429.533 933.963h-.197c-90.578-.048-179.402-24.366-256.878-70.339l-18.438-10.93-191.021 50.083 51-186.176-12.013-19.087c-50.525-80.336-77.198-173.175-77.16-268.504.111-278.186 226.507-504.503 504.898-504.503 134.812.056 261.519 52.604 356.814 147.965 95.289 95.36 147.728 222.128 147.688 356.948-.118 278.195-226.522 504.543-504.693 504.543z"></path>
+            <linearGradient id="htwaicona-chat-s4" gradientUnits="userSpaceOnUse" x1="609.77" y1="1190.114" x2="609.77" y2="21.084">
+            <stop offset="0" stop-color="#20b038"></stop>
+            <stop offset="1" stop-color="#60d66a"></stop>
+            </linearGradient>
+            <path style="fill: url(#htwaicona-chat-s4);" fill="url(#htwaicona-chat-s4)" d="M27.875 1190.114l82.211-300.18c-50.719-87.852-77.391-187.523-77.359-289.602.133-319.398 260.078-579.25 579.469-579.25 155.016.07 300.508 60.398 409.898 169.891 109.414 109.492 169.633 255.031 169.57 409.812-.133 319.406-260.094 579.281-579.445 579.281-.023 0 .016 0 0 0h-.258c-96.977-.031-192.266-24.375-276.898-70.5l-307.188 80.548z"></path>
+            <image overflow="visible" opacity=".08" width="682" height="639" transform="translate(270.984 291.372)"></image>
+            <path fill-rule="evenodd" clip-rule="evenodd" style="fill: #FFFFFF;" fill="#FFF" d="M462.273 349.294c-11.234-24.977-23.062-25.477-33.75-25.914-8.742-.375-18.75-.352-28.742-.352-10 0-26.25 3.758-39.992 18.766-13.75 15.008-52.5 51.289-52.5 125.078 0 73.797 53.75 145.102 61.242 155.117 7.5 10 103.758 166.266 256.203 226.383 126.695 49.961 152.477 40.023 179.977 37.523s88.734-36.273 101.234-71.297c12.5-35.016 12.5-65.031 8.75-71.305-3.75-6.25-13.75-10-28.75-17.5s-88.734-43.789-102.484-48.789-23.75-7.5-33.75 7.516c-10 15-38.727 48.773-47.477 58.773-8.75 10.023-17.5 11.273-32.5 3.773-15-7.523-63.305-23.344-120.609-74.438-44.586-39.75-74.688-88.844-83.438-103.859-8.75-15-.938-23.125 6.586-30.602 6.734-6.719 15-17.508 22.5-26.266 7.484-8.758 9.984-15.008 14.984-25.008 5-10.016 2.5-18.773-1.25-26.273s-32.898-81.67-46.234-111.326z"></path>
+            <path style="fill: #FFFFFF;" fill="#FFF" d="M1036.898 176.091C923.562 62.677 772.859.185 612.297.114 281.43.114 12.172 269.286 12.039 600.137 12 705.896 39.633 809.13 92.156 900.13L7 1211.067l318.203-83.438c87.672 47.812 186.383 73.008 286.836 73.047h.255.003c330.812 0 600.109-269.219 600.25-600.055.055-160.343-62.328-311.108-175.649-424.53zm-424.601 923.242h-.195c-89.539-.047-177.344-24.086-253.93-69.531l-18.227-10.805-188.828 49.508 50.414-184.039-11.875-18.867c-49.945-79.414-76.312-171.188-76.273-265.422.109-274.992 223.906-498.711 499.102-498.711 133.266.055 258.516 52 352.719 146.266 94.195 94.266 146.031 219.578 145.992 352.852-.118 274.999-223.923 498.749-498.899 498.749z"></path>
+            </svg></span>
+            <span class="ctc_cta">مشاوره رایگان</span>
+            </div>                
+        </div>
+    </div>
+<style id="ht_ctc_rtl">.g_header_badge_online {left: 0;right: unset;}</style>
+<div style="position: relative; bottom: 18px; cursor: auto; z-index:9;" class="ht_ctc_greetings ctc_m_full_width">
+
+    <div class="ht_ctc_chat_greetings_box  template-greetings-1  ctc_greetings_next" style="display: none; position: absolute; right: 0px;bottom: 0px; min-width: 330px; max-width: 420px; ">
+
+        <div class="ht_ctc_chat_greetings_box_layout" style="max-height: 84vh; overflow-y:auto;    box-shadow: 0px 1px 9px 0px rgba(0,0,0,.14); border-radius:8px;">
+
+            <span style="position:absolute; top:0; left:0; cursor:pointer; padding:5px; margin:4px; border-radius:50%; background-color: unset !important; z-index: 9999; line-height: 1;" class="ctc_greetings_close_btn">
+                <svg style="color:lightgray; background-color: unset !important; border-radius:50%;" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                </svg>
+            </span>
+
+            <div class="ctc_greetings_template">
+                    <style>
+    .ctc_g_content_for_bg_image:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://drgoshaderoo.com/wp-content/plugins/click-to-chat-for-whatsapp/./new/inc/assets/img/wa_bg.png');
+    opacity: 0.07;
+    }
+    :root {
+    --ctc_g_message_box_bg_color: #ede1bd;
+    }
+    .template-greetings-1 .ctc_g_message_box {
+    position: relative;
+    max-width: calc(100% - 30px);
+    background-color: var(--ctc_g_message_box_bg_color);
+    }
+    .template-greetings-1 .ctc_g_message_box {
+    box-shadow: 0 1px 0.5px 0 rgba(0,0,0,.14);
+    }
+    .template-greetings-1 .ctc_g_message_box:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 18px;
+    width: 9px;
+    background-color: var(--ctc_g_message_box_bg_color);
+    }
+    .ctc_g_message_box {
+    border-radius: 7px 0px 7px 7px;
+    }
+    .ctc_g_message_box:before {
+    left: 100%;
+    clip-path: polygon(0% 0%, 0% 50%, 100% 0%);
+    -webkit-clip-path: polygon(0% 0%, 0% 50%, 100% 0%);
+    }
+                    </style>
+<div class="ctc_g_heading" style="display: flex; align-items: center; padding: 12px 25px 12px 25px;background-color:#edb100;line-height:1.1;">
+        <div class="greetings_header_image" style="border-radius:50%;height:50px; width:50px;margin-left:9px;">
+                    <img style="display:inline-block; border-radius:50%; height:50px; width:50px;" src="https://drgoshaderoo.com/wp-content/uploads/2023/05/fgherhg.webp" alt="fgherhg">
+                        <span class="for_greetings_header_image_badge g_header_badge_online" style="border: 2px solid rgb(237, 177, 0); background-color: rgb(6, 227, 118);"></span>
+                    </div>
+        <div class="ctc_g_header_content">
+<p><span style="color: #ffffff;font-size: 17px;font-weight: 500">مرکز تخصصی دندانپزشکی دکتر عزیز گشاده رو در الهیه</span></p>
+<p>&nbsp;</p>
+</div>
+</div>
+
+<div class="ctc_g_content" style="background-color:#ece5dd;padding: 18px 18px 98px 24px; position:relative;">
+<div class="ctc_g_content_for_bg_image">
+    <div class="ctc_g_message_box ctc_g_message_box_width" style="margin: 8px 5px;padding:6px 8px 8px 9px;background-color:#ede1bd;"><p style="text-align: right"><span style="font-size: 13px"><strong>به مرکز تخصصی دکتر عزیز گشاده رو خوش آمدید.</strong></span></p>
+<p style="text-align: right"><span style="font-size: 14px">برای مشاوره فوری پیام خود را ارسال کنید</span></p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+
+<div class="ctc_g_sentbutton" style="text-align:center; padding: 11px 25px 9px 25px; cursor:pointer;background-color:#ffffff;">
+<div class="ht_ctc_chat_greetings_box_link ctc-analytics">
+<style id="ht-ctc-s7_1">
+.ht-ctc .g_ctc_s_7_1:hover{background-color:#00d34d !important;}.ht-ctc .g_ctc_s_7_1:hover .g_ctc_s_7_1_cta{color:#f4f4f4 !important;}.ht-ctc .g_ctc_s_7_1:hover svg g path{fill:#f4f4f4 !important;}</style>
+
+<div class="g_ctc_s_7_1 ctc-analytics" style="display:flex;justify-content:center;align-items:center;flex-direction:row-reverse; padding:5px; background-color:#25D366;border-radius:25px; cursor: pointer;">
+<p class="g_ctc_s_7_1_cta ctc-analytics ctc_cta ht-ctc-cta " style="; padding:1px 0px; color:#ffffff; border-radius:10px; margin:0 10px; order:1; ">WhatsApp Us</p>
+<div class="g_ctc_s_7_icon_padding ctc-analytics " style="">
+<svg style="pointer-events:none; display:block; height:20px; width:20px;" height="20px" version="1.1" viewBox="0 0 509 512" width="20px">
+<g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
+<path style="fill: #ffffff;" d="M259.253137,0.00180389396 C121.502859,0.00180389396 9.83730687,111.662896 9.83730687,249.413175 C9.83730687,296.530232 22.9142299,340.597122 45.6254897,378.191325 L0.613226597,512.001804 L138.700183,467.787757 C174.430395,487.549184 215.522926,498.811168 259.253137,498.811168 C396.994498,498.811168 508.660049,387.154535 508.660049,249.415405 C508.662279,111.662896 396.996727,0.00180389396 259.253137,0.00180389396 L259.253137,0.00180389396 Z M259.253137,459.089875 C216.65782,459.089875 176.998957,446.313956 143.886359,424.41206 L63.3044195,450.21808 L89.4939401,372.345171 C64.3924908,337.776609 49.5608297,295.299463 49.5608297,249.406486 C49.5608297,133.783298 143.627719,39.7186378 259.253137,39.7186378 C374.871867,39.7186378 468.940986,133.783298 468.940986,249.406486 C468.940986,365.025215 374.874096,459.089875 259.253137,459.089875 Z M200.755924,146.247066 C196.715791,136.510165 193.62103,136.180176 187.380228,135.883632 C185.239759,135.781068 182.918689,135.682963 180.379113,135.682963 C172.338979,135.682963 164.002301,138.050856 158.97889,143.19021 C152.865178,149.44439 137.578667,164.09322 137.578667,194.171258 C137.578667,224.253755 159.487251,253.321759 162.539648,257.402027 C165.600963,261.477835 205.268745,324.111057 266.985579,349.682963 C315.157262,369.636141 329.460495,367.859106 340.450462,365.455539 C356.441543,361.9639 376.521811,350.186865 381.616571,335.917077 C386.711331,321.63837 386.711331,309.399797 385.184018,306.857991 C383.654475,304.305037 379.578667,302.782183 373.464955,299.716408 C367.351242,296.659552 337.288812,281.870254 331.68569,279.83458 C326.080339,277.796676 320.898622,278.418749 316.5887,284.378615 C310.639982,292.612729 304.918689,301.074268 300.180674,306.09099 C296.46161,310.02856 290.477218,310.577055 285.331175,308.389764 C278.564174,305.506821 259.516237,298.869139 236.160607,278.048627 C217.988923,261.847958 205.716906,241.83458 202.149458,235.711949 C198.582011,229.598236 201.835077,225.948292 204.584241,222.621648 C207.719135,218.824546 210.610997,216.097679 213.667853,212.532462 C216.724709,208.960555 218.432625,207.05866 220.470529,202.973933 C222.508433,198.898125 221.137195,194.690767 219.607652,191.629452 C218.07588,188.568136 205.835077,158.494558 200.755924,146.247066 Z" fill="#ffffff" id="htwaicon-greetings_chat"></path>
+</g>
+</svg>    </div>
+</div>    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ht_ctc_style ht_ctc_chat_style">
+                
+           </div>
+ 
+
+
+
+
+<script>
+    const lazyloadRunObserver = () => {
+        const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+        const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+            entries.forEach( ( entry ) => {
+                if ( entry.isIntersecting ) {
+                    let lazyloadBackground = entry.target;
+                    if( lazyloadBackground ) {
+                        lazyloadBackground.classList.add( 'e-lazyloaded' );
+                    }
+                    lazyloadBackgroundObserver.unobserve( entry.target );
+                }
+            });
+        }, { rootMargin: '200px 0px 200px 0px' } );
+        lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+            lazyloadBackgroundObserver.observe( lazyloadBackground );
+        } );
+    };
+    const events = [
+        'DOMContentLoaded',
+        'elementor/lazyload/observe',
+    ];
+    events.forEach( ( event ) => {
+        document.addEventListener( event, lazyloadRunObserver );
+    } );
+</script>
+<link rel="stylesheet" id="widget-nested-tabs-css" href="https://drgoshaderoo.com/wp-content/plugins/elementor/assets/css/widget-nested-tabs-rtl.min.css?ver=3.31.2" media="all">
+<script id="ht_ctc_app_js-js-extra">
+    var ht_ctc_chat_var = {"number":"989120411399","pre_filled":"\u0633\u0644\u0627\u0645 \u0628\u0647 \u0645\u0631\u06a9\u0632 \u062f\u06a9\u062a\u0631 \u06af\u0634\u0627\u062f\u0647 \u0631\u0648 \u062e\u0648\u0634 \u0622\u0645\u062f\u06cc\u062f","dis_m":"show","dis_d":"show","css":"display: none; cursor: pointer; z-index: 99999999;","pos_d":"position: fixed; bottom: 25px; right: 25px;","pos_m":"position: fixed; bottom: 25px; right: 25px;","side_d":"right","side_m":"right","schedule":"no","se":"From Center","ani":"ht_ctc_an_bounce","url_target_d":"_blank","ga":"yes","fb":"yes","g_init":"close","g_an_event_name":"click to chat","pixel_event_name":"Click to Chat by HoliThemes"};
+    var ht_ctc_variables = {"g_an_event_name":"click to chat","pixel_event_type":"trackCustom","pixel_event_name":"Click to Chat by HoliThemes","g_an_params":["g_an_param_1","g_an_param_2","g_an_param_3"],"g_an_param_1":{"key":"number","value":"{number}"},"g_an_param_2":{"key":"title","value":"{title}"},"g_an_param_3":{"key":"url","value":"{url}"},"pixel_params":["pixel_param_1","pixel_param_2","pixel_param_3","pixel_param_4"],"pixel_param_1":{"key":"Category","value":"Click to Chat for WhatsApp"},"pixel_param_2":{"key":"ID","value":"{number}"},"pixel_param_3":{"key":"Title","value":"{title}"},"pixel_param_4":{"key":"URL","value":"{url}"}};
+    </script>
+    <script src="https://drgoshaderoo.com/wp-content/plugins/click-to-chat-for-whatsapp/new/inc/assets/js/app.js?ver=4.27" id="ht_ctc_app_js-js" defer="" data-wp-strategy="defer"></script>
+    <script src="https://drgoshaderoo.com/wp-content/themes/hello-elementor/assets/js/hello-frontend.js?ver=3.4.4" id="hello-theme-frontend-js"></script>
+    <script src="https://drgoshaderoo.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.31.2" id="elementor-webpack-runtime-js"></script>
+    <script src="https://drgoshaderoo.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.31.2" id="elementor-frontend-modules-js"></script>
+    <script src="https://drgoshaderoo.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+    <script id="elementor-frontend-js-before">
+        var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc \u062f\u0631 Facebook","shareOnTwitter":"\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc \u062f\u0631 Twitter","pinIt":"\u067e\u06cc\u0646 \u06a9\u0646\u06cc\u062f","download":"\u062f\u0627\u0646\u0644\u0648\u062f","downloadImage":"\u062f\u0627\u0646\u0644\u0648\u062f \u062a\u0635\u0648\u06cc\u0631","fullscreen":"\u062a\u0645\u0627\u0645\u200c\u0635\u0641\u062d\u0647","zoom":"\u0628\u0632\u0631\u06af\u0646\u0645\u0627\u06cc\u06cc","share":"\u0627\u0634\u062a\u0631\u0627\u06a9 \u06af\u0630\u0627\u0631\u06cc","playVideo":"\u067e\u062e\u0634 \u0648\u06cc\u062f\u06cc\u0648","previous":"\u0642\u0628\u0644\u06cc","next":"\u0628\u0639\u062f\u06cc","close":"\u0628\u0633\u062a\u0646","a11yCarouselPrevSlideMessage":"\u0627\u0633\u0644\u0627\u06cc\u062f \u0642\u0628\u0644\u06cc","a11yCarouselNextSlideMessage":"\u0627\u0633\u0644\u0627\u06cc\u062f \u0628\u0639\u062f\u06cc","a11yCarouselFirstSlideMessage":"\u0627\u06cc\u0646 \u0627\u0648\u0644\u06cc\u0646 \u0627\u0633\u0644\u0627\u06cc\u062f \u0627\u0633\u062a","a11yCarouselLastSlideMessage":"\u0627\u06cc\u0646 \u0622\u062e\u0631\u06cc\u0646 \u0627\u0633\u0644\u0627\u06cc\u062f \u0627\u0633\u062a","a11yCarouselPaginationBulletMessage":"\u0631\u0641\u062a\u0646 \u0628\u0647 \u0627\u0633\u0644\u0627\u06cc\u062f"},"is_rtl":true,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"\u062d\u0627\u0644\u062a \u0639\u0645\u0648\u062f\u06cc \u0645\u0648\u0628\u0627\u06cc\u0644","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"\u062d\u0627\u0644\u062a \u0627\u0641\u0642\u06cc \u0645\u0648\u0628\u0627\u06cc\u0644","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"\u062d\u0627\u0644\u062a \u0639\u0645\u0648\u062f\u06cc \u062a\u0628\u0644\u062a","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"\u062d\u0627\u0644\u062a \u0627\u0641\u0642\u06cc \u062a\u0628\u0644\u062a","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"\u0644\u067e \u062a\u0627\u067e","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"\u0635\u0641\u062d\u0647 \u0639\u0631\u06cc\u0636 (Widescreen)","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},
+        "hasCustomBreakpoints":false},"version":"3.31.2","is_static":false,"experimentalFeatures":{"additional_custom_breakpoints":true,"container":true,"theme_builder_v2":true,"hello-theme-header-footer":true,"nested-elements":true,"e_element_cache":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"mega-menu":true},"urls":{"assets":"https:\/\/drgoshaderoo.com\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/drgoshaderoo.com\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/drgoshaderoo.com\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"968fef9bba"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"logo","hello_header_menu_layout":"horizontal","hello_footer_logo_type":"logo"},"post":{"id":9,"title":"%D8%B5%D9%81%D8%AD%D9%87%20%D8%A7%D8%B5%D9%84%DB%8C%20-%20%D9%85%D8%B1%DA%A9%D8%B2%20%D8%AA%D8%AE%D8%B5%D8%B5%DB%8C%20%D8%AF%D9%86%D8%AF%D8%A7%D9%86%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C%20%D8%AF%DA%A9%D8%AA%D8%B1%20%D8%B9%D8%B2%DB%8C%D8%B2%20%DA%AF%D8%B4%D8%A7%D8%AF%D9%87%20%D8%B1%D9%88%20%D8%AF%D8%B1%20%D8%A7%D9%84%D9%87%DB%8C%D9%87","excerpt":"","featuredImage":"https:\/\/drgoshaderoo.com\/wp-content\/uploads\/2023\/09\/photo_2023-07-22_16-19-57-1024x682.jpg"}};
+        </script>
+        <script src="https://drgoshaderoo.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.31.2" id="elementor-frontend-js"></script>
+
+
+
+
+
+
+
+<!-- دکمه رفتن به بالا -->
+<a href="#top" id="scroll-top-link" title="رفتن به بالا">
+    ↑
+  </a>
+  
+  <style>
+    /* استایل دکمه */
+    #scroll-top-link {
+      position: fixed;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      text-align: center;
+      right: 10px;
+      bottom: 60px;
+      background: #F4D95F; /* رنگ پس‌زمینه */
+      color: #fff; /* رنگ فلش */
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 200;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+  
+    /* وقتی فعال شد */
+    #scroll-top-link.show {
+      visibility: visible;
+      opacity: 0.8;
+    }
+  
+    /* افکت هاور */
+    #scroll-top-link:hover {
+      opacity: .8;
+      background: #C08C01; /* قرمز شبیه سایت اصلی */
+    }
+  </style>
+  
+  <script>
+    // نمایش/مخفی کردن دکمه بر اساس اسکرول
+    const scrollBtn = document.getElementById("scroll-top-link");
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) { // از 300px به پایین ظاهر میشه
+        scrollBtn.classList.add("show");
+      } else {
+        scrollBtn.classList.remove("show");
+      }
+    });
+  
+    // حرکت نرم به بالای صفحه
+    scrollBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+  
+
+
+<!-- دکمه نمایش باکس واتساپ -->
+
+
+<!-- باکس واتساپ -->
+<div id="waModal" class="wa-modal">
+  <div class="wa-box">
+    <!-- دکمه بستن -->
+    <span class="wa-close" onclick="document.getElementById('waModal').style.display='none'">×</span>
+    
+    <!-- هدر -->
+    <div class="wa-header">
+      
+      <div class="profile-pic">
+        <img src="profile.jpg" alt="دکتر رضایی">
+        <span class="status-dot"></span>
+      </div>
+      <div>
+        <p class="title">مرکز تخصصی دندانپزشکی دکتر رضایی</p>
+        <p class="status">متخصص ترمیم و زیبایی</p>
+        
+          
+      </div>
+    </div>
+
+    <!-- پیام خوشامد -->
+    <div class="wa-message" >
+     
+ <div class="wa-chat">
+    
+  <div class="wa-author">دکتر رضایی</div>
+  <div class="wa-text">
+    👋 سلام<br>
+    سوالات خود را درباره درمان‌های دندانپزشکی زیبایی با ما مطرح کنید.<br>
+    در اولین زمان ممکن پاسخگوی شما هستیم.<br>
+    <div>برای شروع گفتگو در پیام‌رسان واتساپ، روی دکمه زیر بزنید👇🏻</div>
+  </div>
+  <div class="wa-typing">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  
+  <div class="wa-time"></div>
+</div>
+</div>
+
+
+
+
+    <!-- دکمه واتساپ -->
+    <div class="wa-button">
+      <a href="https://wa.me/989123456789" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#fff" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12 0 2.117.555 4.162 1.608 5.959l-1.608 6.041 6.229-1.634c1.713.937 3.646 1.434 5.771 1.434 6.627 0 12-5.373 12-12s-5.373-12-12-12zm0 22c-1.84 0-3.586-.494-5.122-1.429l-.367-.218-3.692.968.984-3.64-.239-.375c-1.005-1.576-1.533-3.397-1.533-5.306 0-5.514 4.486-10 10-10 5.515 0 10 4.486 10 10s-4.485 10-10 10zm5.468-7.279c-.297-.149-1.757-.867-2.029-.967-.273-.1-.472-.149-.67.149-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.131-.606.135-.134.297-.347.446-.521.149-.174.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.61-.916-2.207-.242-.583-.487-.503-.67-.512-.173-.008-.372-.01-.57-.01s-.521.074-.793.372c-.272.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.096 3.197 5.078 4.484.709.306 1.262.489 1.694.625.712.227 1.361.195 1.874.118.571-.085 1.757-.719 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347z"/></svg>
+        چت در واتساپ
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+/* مودال واتساپ */
+.wa-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.wa-box {
+  background: #fff;
+  width: 340px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  position: relative;
+}
+.wa-close {
+  position: absolute;
+  top: 8px; left: 10px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #999;
+}
+.wa-header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: #075e54;
+  color: #fff;
+}
+.wa-header img {
+  width: 45px; height: 45px;
+  border-radius: 50%;
+  margin-left: 10px;
+  border: 2px solid #fff;
+}
+.wa-header .title { font-size: 14px; font-weight: bold; margin: 0; }
+.wa-header .status { font-size: 12px; color: #e0ffe0; margin: 0; }
+.wa-message {
+  background: #ece5dd;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333;
+  padding: 20px 30px 30px 30px;
+  position: relative;
+  overflow: auto;
+}
+
+/* پس‌زمینه واتساپ جدا از محتوا */
+.wa-message::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("https://elfsight.com/assets/chats/patterns/whatsapp.png");
+  opacity: 0.28;   /* فقط پس‌زمینه کم‌رنگ میشه */
+  z-index: 0;
+}
+
+/* متن و چت روی لایه بالاتر */
+.wa-chat {
+  position: relative; /* باعث میشه روی ::before قرار بگیره */
+  z-index: 1;
+  padding: 7px 14px 6px;
+  background-color: #fff;
+  border-radius: 8px 0px 8px 8px;
+  transition: all 0.3s ease 0s;
+  transform-origin: center top;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, .13);
+  margin-top: 4px;
+}
+
+.wa-button {
+  text-align: center;
+  padding: 15px;
+  background: #fff;
+}
+.wa-button a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25d366;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.wa-button a:hover {
+  background: #1ebe5d;
+}
+
+
+
+
+#waModal .modal-content {
+  background-color: #e6ddd4; /* رنگ مشابه واتساپ */
+  position: relative;
+  overflow: auto;
+  max-height: 80vh;
+}
+#waModal .modal-content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  opacity: 0.08;
+  background-image: url("https://elfsight.com/assets/chats/patterns/whatsapp.png");
+}
+
+.wa-message {
+
+  border-radius: 8px 0px 8px 8px; /* شبیه واتساپ */
+  position: relative;
+  z-index: 1;
+  box-shadow: 0px 1px 0.5px rgba(0, 0, 0, .13);
+}
+.wa-author {
+  font-weight: bold;
+  font-size: 14px;
+  color: #075e54;
+  margin-bottom: 3px;
+}
+.wa-time {
+  font-size: 11px;
+  color: gray;
+  text-align: left;
+  margin-top: 4px;
+}
+.wa-typing {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.wa-typing span {
+  width: 6px;
+  height: 6px;
+  background: #888;
+  border-radius: 50%;
+  display: inline-block;
+  animation: typingBlink 1.4s infinite;
+}
+
+.wa-typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.wa-typing span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingBlink {
+  0% { opacity: 0.2; transform: scale(0.8); }
+  20% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.2; transform: scale(0.8); }
+}
+
+
+.profile-pic {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-pic img {
+  width: 60px;   /* سایز دلخواه */
+  height: 60px;
+  border-radius: 50%;
+  display: block;
+}
+
+.status-dot {
+  position: absolute;
+  bottom: 5px;   /* پایین گوشه */
+  right: 5px;    /* سمت راست گوشه */
+  width: 14px;
+  height: 14px;
+  background-color: #06e376; /* سبز واتساپی */
+  border: 2px solid #fff; /* کادر سفید برای جدا شدن */
+  border-radius: 50%;
+}
+
+
+</style>
+<script>
+    // وقتی بیرون از مودال کلیک بشه بسته میشه
+    window.addEventListener("click", function(e) {
+      const modal = document.getElementById("waModal");
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+  <script>
+    function openWa() {
+  const now = new Date();
+  const time = now.getHours().toString().padStart(2,"0") + ":" +
+               now.getMinutes().toString().padStart(2,"0");
+  document.querySelector(".wa-time").textContent = time;
+
+  document.getElementById("wa-window").classList.add("open");
+}
+
+  </script>
+  <script>
+    function openWaModal() {
+      // پیدا کردن المنت زمان داخل مودال با اولویت id="waModal"
+      const timeEl = document.querySelector('#waModal .wa-time') || document.querySelector('.wa-time');
+  
+      if (timeEl) {
+        const now = new Date();
+        const hh = String(now.getHours()).padStart(2, '0');
+        const mm = String(now.getMinutes()).padStart(2, '0');
+        timeEl.textContent = hh + ':' + mm;
+      } else {
+        console.warn('wa-time element not found in #waModal or document');
+      }
+  
+      // سپس مودال را نمایش بده
+      const modal = document.getElementById('waModal');
+      if (modal) {
+        modal.style.display = 'flex';
+      } else {
+        console.error('Modal with id "waModal" not found.');
+      }
+    }
+  </script>
+  <script>
+    function openWaModal() {
+  const timeEl = document.querySelector('#waModal .wa-time');
+  if (timeEl) {
+    const now = new Date();
+    const hh = String(now.getHours()).padStart(2, '0');
+    const mm = String(now.getMinutes()).padStart(2, '0');
+    timeEl.textContent = hh + ':' + mm;
+  }
+  
+  document.getElementById('waModal').style.display = 'flex';
+
+  // نمایش typing فقط ۳ ثانیه
+  const typing = document.querySelector('#waModal .wa-typing');
+  const text = document.querySelector('#waModal .wa-text');
+  if (typing && text) {
+    typing.style.display = 'flex';
+    text.style.display = 'none';
+    setTimeout(() => {
+      typing.style.display = 'none';
+      text.style.display = 'block';
+    }, 3000);
+  }
+}
+
+  </script>
+</body>
+</html>
